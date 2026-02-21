@@ -9,8 +9,15 @@ O projeto foi desenvolvido como atividade prática de laboratório, contemplando
 ## 👨‍💻 Desenvolvedores
 
 - Davi Nunes Carvalho  
-- Matheus Henrique Tavares Malta Soares
-- João victor russo marquito
+- Matheus Henrique Tavares Malta Soares  
+- João Victor Russo Marquito  
+
+---
+
+## 🎨 Protótipo no Figma
+
+🔗 **Link do Figma:**  
+👉 COLE_AQUI_O_LINK_DO_FIGMA
 
 ---
 
@@ -23,12 +30,12 @@ O projeto foi desenvolvido como atividade prática de laboratório, contemplando
 
 ## 🛠️ Tecnologias Utilizadas
 
-- Next.js
-- React
-- JavaScript / TypeScript (ajuste conforme usaram)
-- CSS / Tailwind / Styled Components (ajuste se necessário)
-- Vercel (ou Render / outra hospedagem utilizada)
-- Git & GitHub
+- Next.js  
+- React  
+- TypeScript  
+- Tailwind CSS (se estiver usando)  
+- Git & GitHub  
+- Vercel / Render  
 
 ---
 
@@ -36,11 +43,14 @@ O projeto foi desenvolvido como atividade prática de laboratório, contemplando
 
 Principais dependências utilizadas no projeto:
 
-- next
-- react
-- react-dom
-- (adicione aqui outras bibliotecas usadas, ex:)
-- axios
-- nodemailer (se usaram envio de email)
-- tailwindcss (se usaram)
+- next  
+- react  
+- react-dom  
+- tailwindcss (se usaram)  
+- axios (se usaram)  
+- nodemailer (se usaram envio de email)  
 
+Para visualizar todas as dependências, consulte o arquivo:
+
+```bash
+package.json
