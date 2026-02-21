@@ -17,7 +17,7 @@ O projeto foi desenvolvido como atividade prática de laboratório, contemplando
 ## 🎨 Protótipo no Figma
 
 🔗 **Link do Figma:**  
-👉 [COLE_AQUI_O_LINK_DO_FIGMA(https://www.figma.com/site/5uJwViQDZvkjFkw1QgB3hw/portifolio?node-id=0-1&t=inUnvzpmFWvPnJtW-1)
+👉 (https://www.figma.com/site/5uJwViQDZvkjFkw1QgB3hw/portifolio?node-id=0-1&t=inUnvzpmFWvPnJtW-1)
 
 ---
 
