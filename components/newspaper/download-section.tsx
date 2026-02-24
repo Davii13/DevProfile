@@ -1,3 +1,102 @@
+/*
+  Este código define uma seção "Download de Currículo" animada,
+  com efeito de parallax baseado no movimento do mouse
+  e animações suaves usando Framer Motion.
+
+  ======================================================
+  🔹 Estrutura Geral
+  ======================================================
+  - "use client": executa no lado do cliente (Next.js App Router).
+  - useInView: dispara animações quando a seção entra na viewport.
+  - useMotionValue + useSpring + useTransform:
+      criam um efeito de movimento suave (parallax) no fundo.
+  - Ícones (Download, FileText) vêm do lucide-react.
+
+  A seção contém:
+    1) Texto de fundo gigante "CV" com movimento dinâmico
+    2) Título e descrição
+    3) Botões de download
+    4) Elemento decorativo inferior estilo editorial
+
+  ======================================================
+  🔹 Efeito Parallax no Background
+  ======================================================
+  - mouseX / mouseY:
+      capturam a posição relativa do mouse dentro da seção.
+
+  - smoothX / smoothY:
+      aplicam suavização com física (useSpring).
+
+  - bgX / bgY:
+      convertem o movimento do mouse em deslocamento
+      do texto de fundo (efeito parallax).
+
+  Resultado:
+    O texto gigante "CV" se move levemente
+    acompanhando o movimento do mouse,
+    criando profundidade visual.
+
+  ======================================================
+  🔹 Cabeçalho Animado
+  ======================================================
+  - Título ".Baixar Curriculo":
+      * Efeito skew ao hover.
+      * Aumento de espaçamento na segunda linha.
+  - Linha decorativa central abaixo do título.
+  - Entrada com fade + slide quando aparece na tela.
+
+  ======================================================
+  🔹 Texto Descritivo
+  ======================================================
+  - Explica que o usuário pode baixar o currículo em PDF.
+  - Animação de fade ao entrar na viewport.
+
+  ======================================================
+  🔹 Botões de Ação
+  ======================================================
+
+  1) Botão "Download CV - PDF"
+     - Escala e leve rotação ao hover.
+     - Animação de overlay subindo.
+     - Ícone com efeito bounce.
+     - whileTap reduz escala (feedback de clique).
+     - data-cursor-text ativa texto no cursor customizado.
+
+  2) Botão "Ver Online"
+     - Escala e rotação oposta ao primeiro botão.
+     - Overlay desliza horizontalmente.
+     - Texto muda de cor ao hover.
+     - Também integra com o cursor customizado.
+
+  ======================================================
+  🔹 Decoração Inferior (Estilo Jornal)
+  ======================================================
+  - Linhas horizontais decorativas.
+  - Informações adicionais:
+      * Última atualização
+      * Formato do arquivo
+  - Entrada com fade progressivo.
+
+  ======================================================
+  🎯 Objetivo Geral
+  ======================================================
+  Criar uma seção elegante e interativa para download
+  do currículo, com:
+
+    - Parallax suave
+    - Microinterações refinadas
+    - Estética editorial/minimalista
+    - Feedback visual claro em hover e clique
+
+  Tecnologias utilizadas:
+    - React
+    - Framer Motion
+    - Tailwind CSS
+    - Lucide React
+
+  O foco está na experiência visual premium
+  e sensação de profundidade com movimento sutil.
+*/
 "use client"
 
 import { motion, useInView, useMotionValue, useTransform, useSpring } from "framer-motion"

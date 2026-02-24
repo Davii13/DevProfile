@@ -1,3 +1,105 @@
+/*
+  Este código implementa um cursor customizado animado para o portifolio,
+  substituindo completamente o cursor padrão do navegador (em dispositivos
+  com ponteiro fino, ou seja, não touch).
+
+  Ele utiliza Framer Motion para criar animações suaves,
+  efeitos de mola (spring), rotação e transições dinâmicas.
+
+  ======================================================
+  🔹 Estados Controlados
+  ======================================================
+  - isHovering: indica se o cursor está sobre um elemento interativo.
+  - isClicking: indica se o mouse está pressionado.
+  - cursorText: texto exibido abaixo do cursor (via data-cursor-text).
+  - visible: controla se o cursor deve aparecer (não aparece em touch).
+  - trail: armazena pequenos pontos para criar o efeito de rastro.
+
+  ======================================================
+  🔹 Movimento com Física (Spring)
+  ======================================================
+  - cursorX / cursorY:
+      Controlam a posição exata do ponto interno (segue o mouse com precisão).
+
+  - ringX / ringY:
+      Controlam o anel externo, que segue o mouse com leve atraso
+      (efeito de suavização).
+
+  - useSpring:
+      Cria movimento mais natural com física (stiffness + damping).
+
+  ======================================================
+  🔹 useEffect (Eventos Globais)
+  ======================================================
+  Ao montar o componente:
+
+  - Detecta se o dispositivo é touch → se for, não ativa.
+  - Adiciona eventos globais:
+      * mousemove → atualiza posição e rotação
+      * mousedown → ativa estado de clique
+      * mouseup → remove estado de clique
+      * mouseover → detecta elementos interativos
+      * mouseout → remove estado de hover
+
+  Elementos considerados interativos:
+      a, button, input, textarea, role="button"
+      ou qualquer elemento com [data-cursor-hover]
+
+  Se o elemento tiver data-cursor-text,
+  o texto é exibido abaixo do cursor.
+
+  ======================================================
+  🔹 Efeitos Visuais
+  ======================================================
+
+  1) Remove cursor padrão:
+     Aplica cursor: none via CSS global (apenas para pointer: fine).
+
+  ------------------------------------------------------
+
+  2) Ink Trail (rastro ao hover):
+     - Pequenos pontos vermelhos aparecem ao mover o mouse
+       enquanto está sobre elemento interativo.
+     - Fade out + redução de escala.
+     - Limitado aos últimos 5 pontos.
+
+  ------------------------------------------------------
+
+  3) Outer Ring (anel externo tipo crosshair):
+     - Segue o mouse com leve atraso.
+     - Muda de tamanho ao hover.
+     - Encolhe ao clicar.
+     - Rotaciona 45° ao hover.
+     - Possui linhas centrais (mira).
+     - Mostra "brackets" nos cantos quando em hover.
+     - Exibe texto animado abaixo (cursorText).
+
+  ------------------------------------------------------
+
+  4) Inner Dot (ponto central):
+     - Segue o mouse com precisão total.
+     - Muda de tamanho ao hover e clique.
+     - Alterna cor entre claro e vermelho.
+     - Usa mixBlendMode: difference para contraste automático.
+
+  ======================================================
+  🎯 Objetivo Geral
+  ======================================================
+  Criar uma experiência visual imersiva e sofisticada,
+  transformando o cursor em um elemento de identidade visual
+  do portfólio.
+
+  O componente adiciona:
+    - Microinterações
+    - Feedback visual claro
+    - Efeito cinematográfico/editorial
+    - Sensação de fluidez com física realista
+
+  Tecnologias usadas:
+    - React (estado e efeitos)
+    - Framer Motion (animações e springs)
+    - CSS mix-blend-mode
+*/
 "use client"
 
 import { useEffect, useState, useCallback } from "react"

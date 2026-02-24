@@ -1,3 +1,68 @@
+/*
+======================================================
+SKILLS SECTION - DOCUMENTAÇÃO DO COMPONENTE
+======================================================
+
+Descrição:
+Componente de seção de habilidades e tecnologias do portfólio,
+com cards de categorias, barras de proficiência animadas e tags
+interativas usando Framer Motion. Inclui microinterações e efeitos
+retro/hover.
+
+------------------------------------------------------
+FUNCIONALIDADES PRINCIPAIS
+------------------------------------------------------
+
+1) Grid de Habilidades
+- Exibe categorias de habilidades (Frontend, Backend, Ferramentas)
+- Cada card exibe:
+  * Título da categoria
+  * Skills com nome e nível (%)
+  * Barra de progresso animada
+- Interações:
+  * Efeito parallax 3D baseado no mouse
+  * Registro retro/quadros de impressão nas bordas ao hover
+  * Habilidades animam (deslocamento, cor, escala e rotação) ao hover
+
+2) Barra de Habilidade (SkillBar)
+- Animação do preenchimento da barra baseado no nível da skill
+- Brilho animado sobre a barra ao hover
+- Nomes e níveis animam levemente com escala e rotação
+
+3) Tags de Tecnologias (TechTag)
+- Lista de tecnologias/ferramentas com microinterações
+- Efeito hover:
+  * Escala e rotação leve
+  * Mudança de cor de fundo e borda
+  * Retro ink stamp animado
+- Sequência de entrada animada com delay incremental
+
+4) Layout e Estrutura
+- Section com id="habilidades" e padding top/bottom
+- Header estilizado com efeito tipográfico e underline animado
+- Grid responsivo adaptável (1 coluna mobile, 3 colunas desktop)
+- Uso de useRef e useInView para animações só quando visíveis
+
+------------------------------------------------------
+TECNOLOGIAS UTILIZADAS
+------------------------------------------------------
+
+- React
+- Next.js (Client Component)
+- Framer Motion
+- Tailwind CSS
+
+------------------------------------------------------
+OBJETIVO DO DESIGN
+------------------------------------------------------
+
+- Destacar habilidades de forma visual e interativa
+- Engajar usuário com microinterações e efeitos retro
+- Layout limpo, moderno e responsivo
+- Experiência imersiva com parallax, hover e animações suaves
+
+======================================================
+*/
 "use client"
 
 import { motion, useInView, useMotionValue, useTransform } from "framer-motion"

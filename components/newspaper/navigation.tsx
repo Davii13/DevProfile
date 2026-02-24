@@ -1,3 +1,75 @@
+/*
+======================================================
+NAVIGATION - DOCUMENTAÇÃO DO COMPONENTE
+======================================================
+
+Descrição:
+Componente de navegação fixo do portfólio, responsivo
+para desktop e mobile, com animações suaves usando
+Framer Motion e microinterações detalhadas.
+
+------------------------------------------------------
+FUNCIONALIDADES PRINCIPAIS
+------------------------------------------------------
+
+1) Scroll Detection
+- Detecta quando a página é rolada > 50px.
+- Altera background e borda do navbar para efeito
+  de transparência com backdrop blur.
+- Atualiza estado 'scrolled'.
+
+2) Menu Desktop
+- Lista de links horizontais para seções do site.
+- Hover com:
+  * Underline animado (retro strike effect)
+  * Estrela (&#x2605) com rotação e opacidade
+- Botão CV com hover que anima fundo e ícone.
+
+3) Menu Mobile
+- Botão toggle Hamburger/X para abrir/fechar menu.
+- AnimatePresence controla a entrada/saída com animação de height e opacity.
+- Links animados individualmente (delay incremental).
+- Inclui botão de download CV adaptado para mobile.
+
+4) Animações e Microinterações
+- Framer Motion para:
+  * Entrada do navbar (slide down)
+  * Hover em links (underline, estrela, escala)
+  * Menu mobile (fade + expand/collapse)
+- Transições suaves (spring, easeOut, duration controlada).
+
+------------------------------------------------------
+ESTRUTURA VISUAL
+------------------------------------------------------
+
+- Topo fixo (fixed) com z-index alto.
+- Logo "MM." com hover animado (skew e scale).
+- Links desktop em flex horizontal.
+- Menu mobile expande em flex-col quando ativo.
+- Botão de download CV sempre visível e animado.
+
+------------------------------------------------------
+TECNOLOGIAS UTILIZADAS
+------------------------------------------------------
+
+- React
+- Next.js (Client Component)
+- Framer Motion
+- Tailwind CSS
+- Lucide React (ícones)
+
+------------------------------------------------------
+OBJETIVO DO DESIGN
+------------------------------------------------------
+
+- Navegação clara e responsiva
+- Microinterações visuais para engajamento
+- Estilo retro editorial com hover effects
+- Compatível com desktop e mobile
+- Suavidade na experiência do usuário
+
+======================================================
+*/
 "use client"
 
 import { useState, useEffect } from "react"

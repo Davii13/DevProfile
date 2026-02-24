@@ -1,3 +1,123 @@
+/*
+  Este código implementa a seção "Experiência" do portfólio,
+  exibindo uma linha do tempo profissional e uma área de formação
+  acadêmica, com forte identidade visual editorial e animações
+  usando Framer Motion.
+
+  ======================================================
+  🔹 Estrutura de Dados
+  ======================================================
+
+  - experiences:
+      Lista de experiências profissionais contendo:
+        * Período
+        * Cargo
+        * Empresa
+        * Localização
+        * Descrição
+        * Tecnologias (tags)
+
+  - education:
+      Lista de formações acadêmicas e certificações,
+      com período, título, instituição e descrição.
+
+  ======================================================
+  🔹 ExperienceSection (Componente Principal)
+  ======================================================
+
+  - useInView:
+      Detecta quando a seção entra na viewport
+      e dispara as animações de entrada.
+
+  Estrutura:
+    1) Cabeçalho animado ".Experiencia"
+    2) Timeline profissional
+    3) Seção de Educação
+
+  ======================================================
+  🔹 Timeline Profissional
+  ======================================================
+
+  - Linha vertical fixa no lado esquerdo (efeito linha do tempo).
+  - Cada item é renderizado pelo componente TimelineCard.
+
+  ------------------------------------------------------
+  🔹 TimelineCard
+  ------------------------------------------------------
+
+  Cada card contém:
+
+  - Animação de entrada (fade + slide).
+  - Ponto da timeline:
+      * Aumenta de tamanho ao hover.
+      * Rotaciona levemente.
+  - Borda animada que muda de cor no hover.
+  - Selo retro no canto com número da experiência (#01, #02...).
+  - Cargo (título principal com leve skew ao hover).
+  - Empresa + localização.
+  - Badge do período com animação de escala e cor.
+  - Descrição que desliza levemente ao hover.
+  - Tags de tecnologias:
+      * Animação vertical sutil em sequência.
+      * Mudam de cor ao passar o mouse.
+  - Linha inferior animada que cresce ao hover.
+
+  Objetivo visual:
+    Simular uma linha do tempo moderna
+    com estética inspirada em layout editorial/jornal.
+
+  ======================================================
+  🔹 Seção de Educação
+  ======================================================
+
+  - Título ".Educacao" com destaque em cor primária.
+  - Divisor ornamental estilo jornal.
+  - Cards exibidos em grid responsivo.
+
+  ------------------------------------------------------
+  🔹 EducationCard
+  ------------------------------------------------------
+
+  Cada card possui:
+
+  - Animação de entrada (fade + slide).
+  - Borda tracejada estilo recorte de jornal ao hover.
+  - Ano em destaque grande no canto superior direito.
+  - Badge de período com inversão de cores ao hover.
+  - Título que desliza levemente.
+  - Linha divisória animada.
+  - Nome da instituição com mudança de cor.
+  - Descrição com variação de opacidade.
+  - Linha inferior animada.
+  - Pequenas marcas gráficas decorativas no canto.
+
+  Objetivo visual:
+    Criar aparência de recorte editorial
+    com microinterações elegantes.
+
+  ======================================================
+  🎯 Objetivo Geral
+  ======================================================
+
+  Construir uma seção de experiência profissional
+  visualmente rica e interativa, combinando:
+
+    - Linha do tempo moderna
+    - Estética editorial/minimalista
+    - Microinterações suaves
+    - Animações progressivas ao scroll
+    - Feedback visual claro em hover
+
+  Tecnologias utilizadas:
+    - React
+    - Framer Motion
+    - Tailwind CSS
+
+  Foco principal:
+    Experiência visual premium,
+    organização clara de carreira
+    e forte identidade de design.
+*/
 "use client"
 
 import { motion, useInView } from "framer-motion"

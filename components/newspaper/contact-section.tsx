@@ -1,3 +1,98 @@
+/*
+  Este código define uma seção "Contato" animada para o portifolio em Next.js,
+  utilizando Framer Motion para animações e Lucide Icons para os ícones.
+
+  ======================================================
+  🔹 Estrutura Geral
+  ======================================================
+  - "use client": indica que o componente roda no client-side (Next.js App Router).
+  - useInView: detecta quando a seção entra na viewport para disparar animações.
+  - useState (focusedField): controla qual campo do formulário está focado,
+    permitindo animações dinâmicas nos labels.
+
+  A seção é dividida em duas colunas:
+    1) Informações de contato
+    2) Formulário de mensagem
+
+  ======================================================
+  🔹 Dados Estáticos
+  ======================================================
+  contactInfo:
+    Lista de informações principais (email, telefone, localização),
+    cada item contendo:
+      - Ícone
+      - Label
+      - Valor
+      - Link (mailto, tel, etc.)
+
+  socials:
+    Lista de redes sociais (GitHub, LinkedIn),
+    exibidas abaixo das informações principais.
+
+  ======================================================
+  🔹 Cabeçalho Animado
+  ======================================================
+  - Título ".Contato" dividido em duas partes animadas.
+  - Efeito de skew e alteração de espaçamento ao hover.
+  - Linha decorativa que expande quando o mouse passa por cima.
+
+  ======================================================
+  🔹 Coluna Esquerda (Informações)
+  ======================================================
+  - Texto introdutório convidando para contato.
+  - Lista de contatos:
+      * Cada item entra com animação (fade + slide).
+      * Ao hover:
+          - Move levemente para a direita.
+          - Ícone rotaciona e aumenta.
+          - Cor de fundo muda.
+  - Seção de redes sociais:
+      * Ícones rotacionam 360° ao hover.
+      * Texto desliza levemente para a direita.
+
+  ======================================================
+  🔹 Coluna Direita (Formulário)
+  ======================================================
+  - Container com borda animada ao hover.
+  - Título com cursor piscando (efeito visual tipo terminal).
+  - Formulário com:
+      * Nome
+      * Email
+      * Assunto
+      * Mensagem
+
+  - Labels animados:
+      * Mudam de cor quando o campo está focado.
+      * Deslocam levemente para a direita.
+      * Controlados pelo estado "focusedField".
+
+  - Inputs:
+      * Fundo transparente.
+      * Linha inferior destacada ao focar.
+      * Transições suaves de cor.
+
+  - Botão de envio:
+      * Escala levemente ao hover e ao clique.
+      * Efeito de overlay deslizante.
+      * Ícone de envio.
+      * onSubmit previne comportamento padrão (não envia para backend).
+
+  ======================================================
+  🎯 Objetivo Geral
+  ======================================================
+  Criar uma seção de contato moderna, interativa e elegante,
+  com microinterações e animações suaves.
+
+  Tecnologias utilizadas:
+    - Next.js (estrutura)
+    - Framer Motion (animações)
+    - Tailwind CSS (estilização)
+    - Lucide React (ícones)
+
+  O foco está na experiência do usuário,
+  com feedback visual claro em hover e foco.
+*/
+
 "use client"
 
 import { motion, useInView } from "framer-motion"

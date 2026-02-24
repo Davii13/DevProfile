@@ -1,3 +1,75 @@
+/*
+======================================================
+PROJECTS SECTION - DOCUMENTAÇÃO DO COMPONENTE
+======================================================
+
+Descrição:
+Componente de seção de projetos do portfólio, com cards
+interativos e animados usando Framer Motion, incluindo
+efeitos de hover, glitch no título, parallax e microinterações.
+
+------------------------------------------------------
+FUNCIONALIDADES PRINCIPAIS
+------------------------------------------------------
+
+1) Grid de Projetos
+- Exibe lista de projetos em grid responsivo (1 coluna mobile, 2 colunas desktop)
+- Cada card exibe:
+  * ID e ano
+  * Título com efeito de glitch
+  * Subtítulo
+  * Descrição resumida
+  * Tags de tecnologias
+  * Links: "Ver Projeto" e "Código GitHub"
+
+2) Animações e Microinterações
+- Framer Motion:
+  * Entrada suave dos cards (fade + slide)
+  * Efeito parallax baseado no movimento do mouse (rotateX/rotateY)
+  * Linha de destaque inferior animada no hover
+  * Tags animadas com leve salto e mudança de cor
+  * Corner stamp com número do projeto aparece no hover
+  * Glitch temporário no título ao passar o mouse
+  * Slide fill na barra do header do card ao hover
+
+3) Hover Effects
+- Cards:
+  * Título com glitch e sombra dupla
+  * Tags mudam cor e giram levemente
+  * Linha inferior e corner stamp animam
+- Links:
+  * Movem-se levemente ao hover
+  * Mudança de cor
+  * Cursor com texto contextual ("Ver mais", "GitHub")
+
+4) Layout e Estrutura
+- Section com id="projetos" e padding top/bottom
+- Header estilizado com efeito tipográfico e underline animado
+- Grid responsivo adaptável a diferentes resoluções
+- Cards com borda e background diferenciados
+- Uso de refs e useInView para animações apenas quando visíveis
+
+------------------------------------------------------
+TECNOLOGIAS UTILIZADAS
+------------------------------------------------------
+
+- React
+- Next.js (Client Component)
+- Framer Motion
+- Tailwind CSS
+- Lucide React (ícones)
+
+------------------------------------------------------
+OBJETIVO DO DESIGN
+------------------------------------------------------
+
+- Destacar projetos de forma visual e interativa
+- Engajar usuário com microinterações e efeitos retro/glitch
+- Layout limpo e responsivo
+- Experiência imersiva com parallax e animações suaves
+
+======================================================
+*/
 "use client"
 
 import { motion, useInView, useMotionValue, useTransform } from "framer-motion"

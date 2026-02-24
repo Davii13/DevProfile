@@ -1,3 +1,67 @@
+/*
+  Este código define a seção "Sobre Mim" animada para o portifolio em Next.js,
+  utilizando Framer Motion para criar animações e efeitos interativos.
+
+  ===============================
+  🔹 TiltCard
+  ===============================
+  Componente reutilizável que aplica um efeito 3D de inclinação (tilt)
+  baseado na posição do mouse.
+
+  - useMotionValue: controla valores reativos para posição X e Y.
+  - useTransform: converte a posição do mouse em rotação nos eixos rotateX e rotateY.
+  - onMouseMove: calcula a posição do cursor dentro do elemento e atualiza a rotação.
+  - onMouseLeave: reseta a rotação para a posição original.
+  - transformPerspective: adiciona profundidade ao efeito 3D.
+
+  Resultado: qualquer conteúdo passado como children ganha um efeito
+  de cartão interativo com inclinação suave.
+
+  ===============================
+  🔹 AboutSection
+  ===============================
+  Componente principal da seção "Sobre".
+
+  - useInView: detecta quando a seção entra na tela para disparar animações.
+  - useState:
+      hoveredStat → controla hover nos cards de estatísticas.
+      imgHovered → controla animações da imagem de perfil.
+
+  Estrutura da seção:
+
+  1) Cabeçalho animado:
+     - Texto ".Sobre Mim" com efeitos de hover (skew e letterSpacing).
+     - Linha decorativa que expande ao passar o mouse.
+
+  2) Coluna esquerda:
+     - Imagem de perfil com:
+        * Zoom ao hover
+        * Alternância entre preto e branco e colorido
+        * Legenda animada estilo editorial
+        * Marcas decorativas nos cantos
+     - Textos de apresentação profissional.
+     - Assinatura com leve rotação e escala ao hover.
+
+  3) Coluna direita:
+     - Card "Dados Pessoais" usando TiltCard (efeito 3D).
+     - Lista de informações com leve deslocamento ao hover.
+     - Cards de estatísticas com:
+        * Escala e rotação ao hover
+        * Overlay visual com efeito de linhas
+
+  ===============================
+  🎯 Objetivo Geral
+  ===============================
+  Criar uma seção do portfólio moderna, responsiva e interativa,
+  combinando:
+    - Next.js (estrutura)
+    - Framer Motion (animações)
+    - Tailwind CSS (estilização)
+
+  O foco é oferecer uma experiência visual elegante,
+  com microinterações e efeitos suaves.
+*/
+
 "use client"
 
 import { motion, useInView, useMotionValue, useTransform } from "framer-motion"

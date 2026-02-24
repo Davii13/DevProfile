@@ -1,3 +1,93 @@
+/*
+  Este código define o componente Footer (rodapé) do portfólio,
+  com animações sutis usando Framer Motion e ícones do Lucide React.
+
+  ======================================================
+  🔹 Estrutura Geral
+  ======================================================
+
+  - "use client": indica que o componente roda no lado do cliente.
+  - motion (Framer Motion): adiciona microinterações animadas.
+  - Ícones (Github, Linkedin, Mail): importados do lucide-react.
+
+  O rodapé contém:
+    1) Identidade/Nome
+    2) Links sociais
+    3) Copyright
+    4) Barra decorativa inferior estilo editorial
+
+  ======================================================
+  🔹 Identidade (Nome + Cargo)
+  ======================================================
+
+  - Nome "Matheus Malta." com ponto em cor primária.
+  - Animações:
+      * Move levemente para a direita ao hover.
+      * Aplica leve skew (inclinação horizontal) no texto.
+  - Subtítulo "Software Engineer" em estilo mono,
+    com visual discreto e espaçamento ampliado.
+
+  Objetivo:
+    Reforçar identidade pessoal com elegância e movimento sutil.
+
+  ======================================================
+  🔹 Links Sociais
+  ======================================================
+
+  - Lista dinâmica com:
+      * GitHub
+      * LinkedIn
+      * Email
+
+  - Cada ícone:
+      * Aumenta de tamanho ao hover.
+      * Rotaciona levemente.
+      * Sobe alguns pixels.
+      * Reduz escala ao clicar (feedback tátil).
+      * Muda de cor para a cor primária.
+      * Usa data-cursor-hover para integrar com cursor customizado.
+
+  Objetivo:
+    Criar microinterações divertidas e responsivas.
+
+  ======================================================
+  🔹 Copyright
+  ======================================================
+
+  - Texto em estilo mono e discreto:
+      © 2026 Matheus Malta. Todos os direitos reservados.
+
+  - Posicionado ao lado em telas maiores
+    e empilhado em telas menores (layout responsivo).
+
+  ======================================================
+  🔹 Barra Inferior Estilo Jornal
+  ======================================================
+
+  - Duas linhas horizontais finas decorativas.
+  - Texto central:
+      "Desenvolvido com Next.js, Tailwind CSS & Framer Motion"
+
+  - Visual inspirado em rodapés editoriais/jornalísticos.
+
+  ======================================================
+  🎯 Objetivo Geral
+  ======================================================
+
+  Criar um rodapé minimalista, elegante e interativo,
+  mantendo a identidade visual do portfólio:
+
+    - Microinterações suaves
+    - Estética editorial
+    - Layout responsivo
+    - Feedback visual claro
+
+  Tecnologias utilizadas:
+    - React
+    - Framer Motion
+    - Tailwind CSS
+    - Lucide React
+*/
 "use client"
 
 import { motion } from "framer-motion"
