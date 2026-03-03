@@ -71,6 +71,34 @@ Este projeto foca em entregar uma experiência de navegação fluida, construíd
 
 ---
 
+# 🎥 Demonstração
+
+## 📱 Aplicativo Mobile
+
+Para melhor visualização, as telas principais estão organizadas lado a lado.
+
+| Tela 1 | Tela 2 | Tela 3 | Tela 4 |
+|:------:|:------:|:------:|:------:|
+| <img src="SEU_LINK_AQUI_1" alt="Tela 1 Mobile" width="200"> | <img src="SEU_LINK_AQUI_2" alt="Tela 2 Mobile" width="200"> | <img src="SEU_LINK_AQUI_3" alt="Tela 3 Mobile" width="200"> | <img src="SEU_LINK_AQUI_4" alt="Tela 4 Mobile" width="200"> |
+
+---
+
+## 🌐 Aplicação Web
+
+Para melhor visualização, as telas principais estão organizadas lado a lado.
+
+| Tela 1 | Tela 2 |
+|:------:|:------:|
+| <img src="[SEU_LINK_AQUI_5](https://cdn.discordapp.com/attachments/1407075190801698819/1478466552327307456/image.png?ex=69a880c6&is=69a72f46&hm=0cf308999be028ddae29cc0dc3b19b7560348dfc390f71acfac6e1431d2ec904&)" alt="Tela 1 Web" width="350"> | <img src="[SEU_LINK_AQUI_6](https://cdn.discordapp.com/attachments/1407075190801698819/1478466611483643986/image.png?ex=69a880d4&is=69a72f54&hm=4671a2d4a42b2026f0fceb30eb6bf276128610e158f11daa0aea58f59549fa77&)" alt="Tela 2 Web" width="350"> |
+
+| Tela 3 | Tela 4 |
+|:------:|:------:|
+| <img src="[SEU_LINK_AQUI_7](https://cdn.discordapp.com/attachments/1407075190801698819/1478466724050505818/image.png?ex=69a880ef&is=69a72f6f&hm=1cfef620594196e20ce6f0a224775431210c25d7c4b3eb181e313abd2a8d1ef2&)" alt="Tela 3 Web" width="350"> | <img src="[SEU_LINK_AQUI_8](https://cdn.discordapp.com/attachments/1407075190801698819/1478467402374189097/image.png?ex=69a88191&is=69a73011&hm=82f3fb8068404ee13afbd568779132a98bd9f208618813565b889194aa9f57bd&)" alt="Tela 4 Web" width="350"> |
+
+
+
+---
+
 
 ## 🛠 Tecnologias Utilizadas
 
