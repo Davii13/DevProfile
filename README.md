@@ -114,6 +114,5 @@ Liste os principais contribuidores. Você pode usar links para seus perfis.
 
 Gostaríamos de agradecer às seguintes pessoas e instituições que contribuíram para o nosso aprendizado ao longo do desenvolvimento:
 
-Engenharia de Software PUC Minas - Pelo apoio acadêmico.
-
-Prof. Dr. João Paulo Aramuni - Pelas diretrizes de documentação e boas práticas de desenvolvimento.
+* [**Engenharia de Software PUC Minas**](https://www.instagram.com/engsoftwarepucminas/) - Pelo apoio acadêmico.
+* [**Prof. Dr. João Paulo Aramuni**](https://github.com/joaopauloaramuni) - Pelas diretrizes de documentação e boas práticas de desenvolvimento.
