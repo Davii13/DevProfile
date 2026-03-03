@@ -36,7 +36,7 @@
 ## 🔗 Links Principais
 
 * 🎨 **Protótipo no Figma:** [Acessar Design do Portfólio](https://www.figma.com/site/5uJwViQDZvkjFkw1QgB3hw/portifolio?node-id=0-1&t=inUnvzpmFWvPnJtW-1)
-* 🌐 **Site Publicado (Produção):** [Acessar DevProfile](COLE_AQUI_O_LINK_DA_VERSAO_EM_PRODUCAO)
+* 🌐 **Site Publicado (Produção):** [Indisponível](COLE_AQUI_O_LINK_DA_VERSAO_EM_PRODUCAO)
 
 ---
 
@@ -63,6 +63,6 @@ Este projeto foca em entregar uma experiência de navegação fluida, construíd
 
 | 👤 Nome | 🐙 GitHub |
 |--------|-----------|
-| Davi Nunes Carvalho | [@SeuGithubDavi](https://github.com/SeuGithubDavi) |
-| Matheus Henrique Tavares Malta Soares | [@SeuGithubMatheus](https://github.com/SeuGithubMatheus) |
-| João Victor Russo Marquito | [@SeuGithubJoao](https://github.com/SeuGithubJoao) |
+| Davi Nunes Carvalho | [@Davii13](https://github.com/Davii13) |
+| Matheus Henrique Tavares Malta Soares | [@matheushtms](https://github.com/matheushtms) |
+| João Victor Russo Marquito | [@SeuGithubJoao](https://github.com/joaovictorz10) |
