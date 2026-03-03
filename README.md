@@ -28,16 +28,7 @@ O projeto foi desenvolvido como atividade prática de laboratório, contemplando
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
 
-- Next.js  
-- React  
-- TypeScript  
-- Tailwind CSS (se estiver usando)  
-- Git & GitHub  
-- Vercel / Render  
-
----
 
 ## 🛠️ Tecnologias Utilizadas
 
