@@ -25,7 +25,7 @@
     </td>
     <td>
       <div align="center">
-        <img src="https://img.icons8.com/clouds/200/code.png" alt="Logo do Projeto" width="120px"/>
+        <img src="https://joaopauloaramuni.github.io/image/logo_ES_vertical.png" alt="Logo do Projeto" width="120px"/>
       </div>
     </td>
   </tr> 
