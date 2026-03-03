@@ -48,8 +48,6 @@ Este projeto foca em entregar uma experiência de navegação fluida, construíd
 
 ---
 
----
-
 ### 📂 Estrutura de Pastas Principais
 
 * `/app`: Contém as rotas e componentes de página (Next.js App Router).
@@ -62,7 +60,6 @@ Este projeto foca em entregar uma experiência de navegação fluida, construíd
 
 * `/styles`: Arquivos de configuração de estilo e CSS global.
 
-está assim, e tem um template q o professor passa com algumas informações.
 
 <!-- Este template foi criado para servir como referência e pode ser facilmente adaptado para diferentes projetos de desenvolvimento -->
 
