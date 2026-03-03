@@ -1,124 +1,49 @@
-/*
-  Este código define uma seção "Contato" animada para o portifolio em Next.js,
-  utilizando Framer Motion para animações e Lucide Icons para os ícones.
-
-  ======================================================
-  🔹 Estrutura Geral
-  ======================================================
-  - "use client": indica que o componente roda no client-side (Next.js App Router).
-  - useInView: detecta quando a seção entra na viewport para disparar animações.
-  - useState (focusedField): controla qual campo do formulário está focado,
-    permitindo animações dinâmicas nos labels.
-
-  A seção é dividida em duas colunas:
-    1) Informações de contato
-    2) Formulário de mensagem
-
-  ======================================================
-  🔹 Dados Estáticos
-  ======================================================
-  contactInfo:
-    Lista de informações principais (email, telefone, localização),
-    cada item contendo:
-      - Ícone
-      - Label
-      - Valor
-      - Link (mailto, tel, etc.)
-
-  socials:
-    Lista de redes sociais (GitHub, LinkedIn),
-    exibidas abaixo das informações principais.
-
-  ======================================================
-  🔹 Cabeçalho Animado
-  ======================================================
-  - Título ".Contato" dividido em duas partes animadas.
-  - Efeito de skew e alteração de espaçamento ao hover.
-  - Linha decorativa que expande quando o mouse passa por cima.
-
-  ======================================================
-  🔹 Coluna Esquerda (Informações)
-  ======================================================
-  - Texto introdutório convidando para contato.
-  - Lista de contatos:
-      * Cada item entra com animação (fade + slide).
-      * Ao hover:
-          - Move levemente para a direita.
-          - Ícone rotaciona e aumenta.
-          - Cor de fundo muda.
-  - Seção de redes sociais:
-      * Ícones rotacionam 360° ao hover.
-      * Texto desliza levemente para a direita.
-
-  ======================================================
-  🔹 Coluna Direita (Formulário)
-  ======================================================
-  - Container com borda animada ao hover.
-  - Título com cursor piscando (efeito visual tipo terminal).
-  - Formulário com:
-      * Nome
-      * Email
-      * Assunto
-      * Mensagem
-
-  - Labels animados:
-      * Mudam de cor quando o campo está focado.
-      * Deslocam levemente para a direita.
-      * Controlados pelo estado "focusedField".
-
-  - Inputs:
-      * Fundo transparente.
-      * Linha inferior destacada ao focar.
-      * Transições suaves de cor.
-
-  - Botão de envio:
-      * Escala levemente ao hover e ao clique.
-      * Efeito de overlay deslizante.
-      * Ícone de envio.
-      * onSubmit previne comportamento padrão (não envia para backend).
-
-  ======================================================
-  🎯 Objetivo Geral
-  ======================================================
-  Criar uma seção de contato moderna, interativa e elegante,
-  com microinterações e animações suaves.
-
-  Tecnologias utilizadas:
-    - Next.js (estrutura)
-    - Framer Motion (animações)
-    - Tailwind CSS (estilização)
-    - Lucide React (ícones)
-
-  O foco está na experiência do usuário,
-  com feedback visual claro em hover e foco.
-*/
-
 "use client"
 
 import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
 import { Mail, MapPin, Phone, Github, Linkedin, Send } from "lucide-react"
-
-const contactInfo = [
-  { icon: Mail, label: "Email", value: "matheus@malta.dev", href: "mailto:matheus@malta.dev" },
-  { icon: Phone, label: "Telefone", value: "+55 (81) 99999-9999", href: "tel:+5581999999999" },
-  { icon: MapPin, label: "Localizacao", value: "Recife, PE - Brasil", href: "#" },
-]
-
-const socials = [
-  { icon: Github, label: "GitHub", value: "github.com/matheusmalta", href: "#" },
-  { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/matheusmalta", href: "#" },
-]
+import { useLanguage } from "@/context/LanguageContext"
+import { texts } from "@/i18n/texts"
 
 export function ContactSection() {
+  const { lang } = useLanguage()
+  const t = texts.contact
+
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [focusedField, setFocusedField] = useState<string | null>(null)
 
+  const contactInfo = [
+    {
+      icon: Mail,
+      label: "Email",
+      value: "matheus@malta.dev",
+      href: "mailto:matheus@malta.dev",
+    },
+    {
+      icon: Phone,
+      label: lang === "pt" ? "Telefone" : "Phone",
+      value: "+55 (81) 99999-9999",
+      href: "tel:+5581999999999",
+    },
+    {
+      icon: MapPin,
+      label: lang === "pt" ? "Localização" : "Location",
+      value: lang === "pt" ? "Recife, PE - Brasil" : "Recife, PE - Brazil",
+      href: "#",
+    },
+  ]
+
+  const socials = [
+    { icon: Github, label: "GitHub", value: "github.com/matheusmalta", href: "#" },
+    { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/matheusmalta", href: "#" },
+  ]
+
   return (
     <section id="contato" className="relative bg-card py-24 md:py-32" ref={ref}>
       <div className="mx-auto max-w-7xl px-6">
-        {/* Section header */}
+        {/* HEADER */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -126,19 +51,26 @@ export function ContactSection() {
           className="mb-16"
         >
           <h2 className="font-serif text-6xl md:text-8xl font-black text-card-foreground uppercase leading-none">
-            <motion.span className="inline-block" whileHover={{ skewX: -5 }} transition={{ type: "spring", stiffness: 300 }}>
-              .Con
+            <motion.span whileHover={{ skewX: -5 }}>
+              {t.titleLine1[lang]}
             </motion.span>
             <br />
-            <motion.span className="text-primary inline-block" whileHover={{ letterSpacing: "0.05em" }} transition={{ duration: 0.3 }}>
-              tato
+            <motion.span
+              className="text-primary"
+              whileHover={{ letterSpacing: "0.05em" }}
+            >
+              {t.titleLine2[lang]}
             </motion.span>
           </h2>
-          <motion.div className="mt-4 h-[3px] w-24 bg-primary" whileHover={{ width: 192 }} transition={{ duration: 0.4 }} />
+
+          <motion.div
+            className="mt-4 h-[3px] w-24 bg-primary"
+            whileHover={{ width: 192 }}
+          />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
-          {/* Left - contact info */}
+          {/* LEFT SIDE */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -146,28 +78,28 @@ export function ContactSection() {
             className="md:col-span-5"
           >
             <p className="font-serif text-2xl text-card-foreground leading-relaxed mb-8">
-              Vamos conversar? Estou sempre aberto a novas oportunidades
-              e parcerias interessantes.
+              {t.intro[lang]}
             </p>
 
             <div className="flex flex-col gap-6 mb-8">
               {contactInfo.map((item, i) => (
                 <motion.a
-                  key={item.label}
+                  key={i}
                   href={item.href}
                   initial={{ opacity: 0, x: -20 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
                   whileHover={{ x: 8 }}
                   className="group flex items-start gap-4"
-                  data-cursor-hover
                 >
                   <motion.div
                     className="bg-card-foreground/5 p-3 group-hover:bg-primary transition-colors"
                     whileHover={{ rotate: -8, scale: 1.1 }}
-                    transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <item.icon size={18} className="text-card-foreground group-hover:text-primary-foreground transition-colors" />
+                    <item.icon
+                      size={18}
+                      className="text-card-foreground group-hover:text-primary-foreground transition-colors"
+                    />
                   </motion.div>
                   <div>
                     <p className="font-mono text-[10px] uppercase tracking-widest text-card-foreground/50">
@@ -183,21 +115,18 @@ export function ContactSection() {
 
             <div className="border-t border-card-foreground/10 pt-6">
               <p className="font-mono text-[10px] uppercase tracking-widest text-card-foreground/50 mb-4">
-                Redes Sociais
+                {t.socialTitle[lang]}
               </p>
+
               <div className="flex flex-col gap-4">
-                {socials.map((item) => (
+                {socials.map((item, i) => (
                   <motion.a
-                    key={item.label}
+                    key={i}
                     href={item.href}
                     className="group flex items-center gap-3 text-card-foreground hover:text-primary transition-colors"
                     whileHover={{ x: 8 }}
-                    data-cursor-hover
                   >
-                    <motion.div
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.5 }}
-                    >
+                    <motion.div whileHover={{ rotate: 360 }}>
                       <item.icon size={18} />
                     </motion.div>
                     <span className="font-mono text-xs uppercase tracking-widest">
@@ -209,114 +138,83 @@ export function ContactSection() {
             </div>
           </motion.div>
 
-          {/* Right - contact form */}
+          {/* RIGHT SIDE - FORM */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="md:col-span-7"
           >
-            <motion.div
-              className="border border-card-foreground/10 p-8 md:p-10 relative overflow-hidden"
-              whileHover={{ borderColor: "rgba(200, 16, 46, 0.3)" }}
-              transition={{ duration: 0.3 }}
-            >
-              {/* Typing cursor blinking on focused label */}
+            <div className="border border-card-foreground/10 p-8 md:p-10">
               <h3 className="font-mono text-xs uppercase tracking-widest text-primary mb-8">
-                Envie uma mensagem
-                <motion.span
-                  animate={{ opacity: [1, 0] }}
-                  transition={{ duration: 0.6, repeat: Infinity, repeatType: "reverse" }}
-                  className="inline-block ml-1 w-[2px] h-3 bg-primary align-middle"
-                />
+                {t.formTitle[lang]}
               </h3>
 
-              <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
+              <form className="flex flex-col gap-6">
+                {/* Name + Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {[
-                    { id: "nome", label: "Nome", type: "text", placeholder: "Seu nome" },
-                    { id: "email", label: "Email", type: "email", placeholder: "seu@email.com" },
+                    {
+                      id: "name",
+                      label: t.fields.name[lang],
+                      placeholder: t.placeholders.name[lang],
+                      type: "text",
+                    },
+                    {
+                      id: "email",
+                      label: t.fields.email[lang],
+                      placeholder: t.placeholders.email[lang],
+                      type: "email",
+                    },
                   ].map((field) => (
-                    <div key={field.id} className="relative">
-                      <motion.label
-                        className="font-mono text-[10px] uppercase tracking-widest text-card-foreground/50 mb-2 block"
-                        animate={{
-                          color: focusedField === field.id ? "#c8102e" : "rgba(26,26,26,0.5)",
-                          x: focusedField === field.id ? 4 : 0,
-                        }}
-                        transition={{ duration: 0.2 }}
-                      >
+                    <div key={field.id}>
+                      <label className="font-mono text-[10px] uppercase tracking-widest text-card-foreground/50 block mb-2">
                         {field.label}
-                      </motion.label>
+                      </label>
                       <input
                         type={field.type}
-                        onFocus={() => setFocusedField(field.id)}
-                        onBlur={() => setFocusedField(null)}
-                        className="w-full bg-transparent border-b-2 border-card-foreground/20 py-3 font-sans text-sm text-card-foreground focus:border-primary outline-none transition-colors placeholder:text-card-foreground/30"
                         placeholder={field.placeholder}
+                        className="w-full bg-transparent border-b-2 border-card-foreground/20 py-3 font-sans text-sm text-card-foreground focus:border-primary outline-none transition-colors placeholder:text-card-foreground/30"
                       />
                     </div>
                   ))}
                 </div>
 
-                <div className="relative">
-                  <motion.label
-                    className="font-mono text-[10px] uppercase tracking-widest text-card-foreground/50 mb-2 block"
-                    animate={{
-                      color: focusedField === "assunto" ? "#c8102e" : "rgba(26,26,26,0.5)",
-                      x: focusedField === "assunto" ? 4 : 0,
-                    }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    Assunto
-                  </motion.label>
+                {/* Subject */}
+                <div>
+                  <label className="font-mono text-[10px] uppercase tracking-widest text-card-foreground/50 block mb-2">
+                    {t.fields.subject[lang]}
+                  </label>
                   <input
                     type="text"
-                    onFocus={() => setFocusedField("assunto")}
-                    onBlur={() => setFocusedField(null)}
+                    placeholder={t.placeholders.subject[lang]}
                     className="w-full bg-transparent border-b-2 border-card-foreground/20 py-3 font-sans text-sm text-card-foreground focus:border-primary outline-none transition-colors placeholder:text-card-foreground/30"
-                    placeholder="Assunto da mensagem"
                   />
                 </div>
 
-                <div className="relative">
-                  <motion.label
-                    className="font-mono text-[10px] uppercase tracking-widest text-card-foreground/50 mb-2 block"
-                    animate={{
-                      color: focusedField === "mensagem" ? "#c8102e" : "rgba(26,26,26,0.5)",
-                      x: focusedField === "mensagem" ? 4 : 0,
-                    }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    Mensagem
-                  </motion.label>
+                {/* Message */}
+                <div>
+                  <label className="font-mono text-[10px] uppercase tracking-widest text-card-foreground/50 block mb-2">
+                    {t.fields.message[lang]}
+                  </label>
                   <textarea
                     rows={5}
-                    onFocus={() => setFocusedField("mensagem")}
-                    onBlur={() => setFocusedField(null)}
+                    placeholder={t.placeholders.message[lang]}
                     className="w-full bg-transparent border-b-2 border-card-foreground/20 py-3 font-sans text-sm text-card-foreground focus:border-primary outline-none transition-colors resize-none placeholder:text-card-foreground/30"
-                    placeholder="Escreva sua mensagem..."
                   />
                 </div>
 
                 <motion.button
                   type="submit"
-                  className="group relative flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-mono text-xs uppercase tracking-widest self-start overflow-hidden"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  data-cursor-text="Enviar"
+                  className="flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-mono text-xs uppercase tracking-widest self-start"
                 >
-                  <motion.span
-                    className="absolute inset-0 bg-card-foreground"
-                    initial={{ x: "-100%" }}
-                    whileHover={{ x: "0%" }}
-                    transition={{ duration: 0.35 }}
-                  />
-                  <Send size={14} className="relative z-10" />
-                  <span className="relative z-10">Enviar Mensagem</span>
+                  <Send size={14} />
+                  {t.button[lang]}
                 </motion.button>
               </form>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>

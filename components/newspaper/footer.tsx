@@ -92,12 +92,19 @@
 
 import { motion } from "framer-motion"
 import { Github, Linkedin, Mail } from "lucide-react"
+import { useLanguage } from "@/context/LanguageContext"
+import { texts } from "@/i18n/texts"
 
 export function Footer() {
+  const { lang } = useLanguage()
+  const t = texts.footer
+
   return (
     <footer className="bg-card border-t border-card-foreground/10 py-12">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+
+          {/* Nome */}
           <motion.div
             className="flex flex-col items-center md:items-start"
             whileHover={{ x: 4 }}
@@ -108,13 +115,16 @@ export function Footer() {
               whileHover={{ skewX: -4 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              Matheus Malta<span className="text-primary">.</span>
+              {t.name[lang]}
+              <span className="text-primary">.</span>
             </motion.span>
+
             <p className="font-mono text-[10px] uppercase tracking-widest text-card-foreground/50 mt-1">
-              Software Engineer
+              {t.role[lang]}
             </p>
           </motion.div>
 
+          {/* Ícones */}
           <div className="flex items-center gap-6">
             {[
               { icon: Github, href: "#", label: "GitHub" },
@@ -136,21 +146,25 @@ export function Footer() {
             ))}
           </div>
 
+          {/* Direitos */}
           <p className="font-mono text-[10px] uppercase tracking-widest text-card-foreground/30">
-            &copy; 2026 Matheus Malta. Todos os direitos reservados.
+            &copy; 2026 {t.name[lang]}. {t.rights[lang]}
           </p>
+
         </div>
 
-        {/* Newspaper bottom bar */}
+        {/* Barra inferior */}
         <div className="mt-8 pt-6 border-t border-card-foreground/10">
           <div className="flex flex-col gap-1">
             <div className="h-[2px] bg-card-foreground/10" />
             <div className="h-px bg-card-foreground/10" />
           </div>
+
           <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-card-foreground/20 text-center mt-4">
-            Desenvolvido com Next.js, Tailwind CSS & Framer Motion
+            {t.developedWith[lang]}
           </p>
         </div>
+
       </div>
     </footer>
   )

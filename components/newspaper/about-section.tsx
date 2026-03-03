@@ -1,72 +1,10 @@
-/*
-  Este código define a seção "Sobre Mim" animada para o portifolio em Next.js,
-  utilizando Framer Motion para criar animações e efeitos interativos.
-
-  ===============================
-  🔹 TiltCard
-  ===============================
-  Componente reutilizável que aplica um efeito 3D de inclinação (tilt)
-  baseado na posição do mouse.
-
-  - useMotionValue: controla valores reativos para posição X e Y.
-  - useTransform: converte a posição do mouse em rotação nos eixos rotateX e rotateY.
-  - onMouseMove: calcula a posição do cursor dentro do elemento e atualiza a rotação.
-  - onMouseLeave: reseta a rotação para a posição original.
-  - transformPerspective: adiciona profundidade ao efeito 3D.
-
-  Resultado: qualquer conteúdo passado como children ganha um efeito
-  de cartão interativo com inclinação suave.
-
-  ===============================
-  🔹 AboutSection
-  ===============================
-  Componente principal da seção "Sobre".
-
-  - useInView: detecta quando a seção entra na tela para disparar animações.
-  - useState:
-      hoveredStat → controla hover nos cards de estatísticas.
-      imgHovered → controla animações da imagem de perfil.
-
-  Estrutura da seção:
-
-  1) Cabeçalho animado:
-     - Texto ".Sobre Mim" com efeitos de hover (skew e letterSpacing).
-     - Linha decorativa que expande ao passar o mouse.
-
-  2) Coluna esquerda:
-     - Imagem de perfil com:
-        * Zoom ao hover
-        * Alternância entre preto e branco e colorido
-        * Legenda animada estilo editorial
-        * Marcas decorativas nos cantos
-     - Textos de apresentação profissional.
-     - Assinatura com leve rotação e escala ao hover.
-
-  3) Coluna direita:
-     - Card "Dados Pessoais" usando TiltCard (efeito 3D).
-     - Lista de informações com leve deslocamento ao hover.
-     - Cards de estatísticas com:
-        * Escala e rotação ao hover
-        * Overlay visual com efeito de linhas
-
-  ===============================
-  🎯 Objetivo Geral
-  ===============================
-  Criar uma seção do portfólio moderna, responsiva e interativa,
-  combinando:
-    - Next.js (estrutura)
-    - Framer Motion (animações)
-    - Tailwind CSS (estilização)
-
-  O foco é oferecer uma experiência visual elegante,
-  com microinterações e efeitos suaves.
-*/
-
 "use client"
 
 import { motion, useInView, useMotionValue, useTransform } from "framer-motion"
 import { useRef, useState } from "react"
 import Image from "next/image"
+import { useLanguage } from "@/context/LanguageContext"
+import { texts } from "@/i18n/texts"
 
 function TiltCard({ children, className }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null)
@@ -101,6 +39,9 @@ function TiltCard({ children, className }: { children: React.ReactNode; classNam
 }
 
 export function AboutSection() {
+  const { lang } = useLanguage()
+  const t = texts[lang].about
+
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [hoveredStat, setHoveredStat] = useState<number | null>(null)
@@ -109,7 +50,6 @@ export function AboutSection() {
   return (
     <section id="sobre" className="relative bg-card py-24 md:py-32" ref={ref}>
       <div className="mx-auto max-w-7xl px-6">
-        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -117,140 +57,79 @@ export function AboutSection() {
           className="mb-16"
         >
           <h2 className="font-serif text-6xl md:text-8xl font-black text-card-foreground uppercase leading-none">
-            <motion.span
-              className="inline-block"
-              whileHover={{ skewX: -5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              .Sobre
+            <motion.span whileHover={{ skewX: -5 }}>
+              {t.titleLine1}
             </motion.span>
             <br />
-            <motion.span
-              className="text-primary inline-block"
-              whileHover={{ letterSpacing: "0.05em" }}
-              transition={{ duration: 0.3 }}
-            >
-              Mim
+            <motion.span className="text-primary" whileHover={{ letterSpacing: "0.05em" }}>
+              {t.titleLine2}
             </motion.span>
           </h2>
-          <motion.div
-            className="mt-4 h-[3px] w-24 bg-primary"
-            whileHover={{ width: 96 * 2, transition: { duration: 0.4 } }}
-          />
+          <div className="mt-4 h-[3px] w-24 bg-primary" />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
-          {/* Left column - Photo + Bio */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="md:col-span-7"
           >
-            {/* Profile Image - Editorial Style */}
-            <motion.div
-              className="relative mb-10 group"
+            <div
+              className="relative mb-10"
               onMouseEnter={() => setImgHovered(true)}
               onMouseLeave={() => setImgHovered(false)}
-              data-cursor-hover
-              data-cursor-text="FOTO"
             >
               <div className="relative overflow-hidden border-2 border-card-foreground/20 max-w-xs">
-                <motion.div
-                  animate={{ scale: imgHovered ? 1.05 : 1 }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                >
+                <motion.div animate={{ scale: imgHovered ? 1.05 : 1 }}>
                   <Image
                     src="/images/profile.jpg"
                     alt="Davi Nunes"
                     width={320}
                     height={400}
                     className="w-full h-auto object-cover grayscale contrast-125"
-                    style={{ filter: imgHovered ? "grayscale(0%) contrast(1.1)" : "grayscale(100%) contrast(1.25)" }}
                   />
                 </motion.div>
 
-                {/* Newspaper overlay caption */}
                 <motion.div
                   className="absolute bottom-0 left-0 right-0 bg-card-foreground/90 px-4 py-3"
                   initial={{ y: "100%" }}
                   animate={{ y: imgHovered ? "0%" : "100%" }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
                 >
                   <p className="font-mono text-[10px] uppercase tracking-widest text-card">
-                    Fig. 01 - Matheus Malta, Engenheiro de Software
+                    {t.imageCaption}
                   </p>
                 </motion.div>
-
-                {/* Registration marks on corners */}
-                <motion.div
-                  className="absolute top-2 left-2 w-5 h-5 border-t-2 border-l-2 border-primary"
-                  animate={{ opacity: imgHovered ? 1 : 0 }}
-                  transition={{ duration: 0.2 }}
-                />
-                <motion.div
-                  className="absolute top-2 right-2 w-5 h-5 border-t-2 border-r-2 border-primary"
-                  animate={{ opacity: imgHovered ? 1 : 0 }}
-                  transition={{ duration: 0.2, delay: 0.05 }}
-                />
-                <motion.div
-                  className="absolute bottom-2 left-2 w-5 h-5 border-b-2 border-l-2 border-primary"
-                  animate={{ opacity: imgHovered ? 1 : 0 }}
-                  transition={{ duration: 0.2, delay: 0.1 }}
-                />
-                <motion.div
-                  className="absolute bottom-2 right-2 w-5 h-5 border-b-2 border-r-2 border-primary"
-                  animate={{ opacity: imgHovered ? 1 : 0 }}
-                  transition={{ duration: 0.2, delay: 0.15 }}
-                />
               </div>
 
-              {/* Photo credit line */}
-              <motion.p
-                className="font-mono text-[9px] uppercase tracking-[0.3em] text-card-foreground/40 mt-2"
-                animate={{ opacity: imgHovered ? 1 : 0.4 }}
-              >
-                Foto: Arquivo Pessoal / 2025
-              </motion.p>
-            </motion.div>
+              <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-card-foreground/40 mt-2">
+                {t.photoCredit}
+              </p>
+            </div>
 
-            <p className="font-serif text-2xl md:text-3xl text-card-foreground leading-relaxed mb-8">
-              Sou um engenheiro de software apaixonado por criar
-              experiencias digitais elegantes e performaticas.
-              Atualmente cursando Engenharia de Software
-              com foco em desenvolvimento full stack.
+            <p className="font-serif text-2xl leading-relaxed mb-8">
+              {t.paragraph1}
             </p>
-            <p className="font-sans text-base text-card-foreground/70 leading-relaxed mb-6">
-              Com mais de 3 anos de experiencia no desenvolvimento web,
-              trabalho com tecnologias modernas como React, Next.js,
-              Node.js e TypeScript. Meu objetivo e construir aplicacoes
-              que resolvam problemas reais com codigo limpo e interfaces
-              intuitivas.
+            <p className="text-card-foreground/70 mb-6">
+              {t.paragraph2}
             </p>
-            <p className="font-sans text-base text-card-foreground/70 leading-relaxed">
-              Quando nao estou programando, voce me encontra estudando
-              novas tecnologias, contribuindo para projetos open source
-              ou jogando videogames.
+            <p className="text-card-foreground/70">
+              {t.paragraph3}
             </p>
 
             <div className="mt-8 pt-8 border-t-2 border-card-foreground/10">
               <p className="font-mono text-xs uppercase tracking-widest text-card-foreground/50 mb-2">
-                Assinatura
+                {t.signatureLabel}
               </p>
-              <motion.p
-                className="font-serif text-2xl italic text-card-foreground inline-block"
-                whileHover={{ rotate: -3, scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 200 }}
-              >
+              <p className="font-serif text-2xl italic">
                 Davi Nunes
-              </motion.p>
+              </p>
               <p className="font-mono text-xs text-primary uppercase tracking-widest mt-1">
-                Software Engineer
+                {t.role}
               </p>
             </div>
           </motion.div>
 
-          {/* Right column */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -259,63 +138,41 @@ export function AboutSection() {
           >
             <TiltCard className="bg-card-foreground/5 p-8 border border-card-foreground/10">
               <h3 className="font-mono text-xs uppercase tracking-widest text-primary mb-8">
-                Dados Pessoais
+                {t.personalDataTitle}
               </h3>
 
-              {[
-                { label: "Nome", value: "Davi Nunes Carvalho" },
-                { label: "Local", value: "Recife, PE - Brasil" },
-                { label: "Formacao", value: "Eng. de Software" },
-                { label: "Email", value: "matheus@malta.dev" },
-                { label: "Idiomas", value: "Portugues, Ingles" },
-                { label: "Disponivel", value: "Freelance & CLT" },
-              ].map((item, i) => (
-                <motion.div
+              {t.personalData.map((item, i) => (
+                <div
                   key={item.label}
-                  className={`group flex justify-between py-3 ${
-                    i !== 5 ? "border-b border-card-foreground/10" : ""
+                  className={`flex justify-between py-3 ${
+                    i !== t.personalData.length - 1
+                      ? "border-b border-card-foreground/10"
+                      : ""
                   }`}
-                  whileHover={{ x: 4 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
                 >
-                  <span className="font-mono text-xs uppercase tracking-widest text-card-foreground/50 group-hover:text-primary transition-colors">
+                  <span className="font-mono text-xs uppercase tracking-widest text-card-foreground/50">
                     {item.label}
                   </span>
-                  <span className="font-sans text-sm text-card-foreground font-medium group-hover:font-bold transition-all">
+                  <span className="font-sans text-sm font-medium">
                     {item.value}
                   </span>
-                </motion.div>
+                </div>
               ))}
             </TiltCard>
 
-            {/* Stats */}
             <div className="mt-6 grid grid-cols-3 gap-4">
-              {[
-                { number: "3+", label: "Anos Exp." },
-                { number: "20+", label: "Projetos" },
-                { number: "10+", label: "Tecnologias" },
-              ].map((stat, i) => (
+              {t.stats.map((stat, i) => (
                 <motion.div
                   key={stat.label}
-                  className="relative bg-primary text-primary-foreground p-4 text-center overflow-hidden"
+                  className="bg-primary text-primary-foreground p-4 text-center"
                   onMouseEnter={() => setHoveredStat(i)}
                   onMouseLeave={() => setHoveredStat(null)}
-                  whileHover={{ scale: 1.08, rotate: i === 1 ? 0 : i === 0 ? -2 : 2 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                  data-cursor-hover
+                  whileHover={{ scale: 1.08 }}
                 >
-                  {hoveredStat === i && (
-                    <motion.div
-                      className="absolute inset-0 pointer-events-none"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      style={{
-                        background: "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.1) 2px, rgba(0,0,0,0.1) 4px)",
-                      }}
-                    />
-                  )}
-                  <p className="font-serif text-3xl font-black relative z-10">{stat.number}</p>
-                  <p className="font-mono text-[10px] uppercase tracking-widest mt-1 relative z-10">
+                  <p className="font-serif text-3xl font-black">
+                    {stat.number}
+                  </p>
+                  <p className="font-mono text-[10px] uppercase tracking-widest mt-1">
                     {stat.label}
                   </p>
                 </motion.div>
