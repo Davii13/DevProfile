@@ -73,13 +73,6 @@ Este projeto foca em entregar uma experiência de navegação fluida, construíd
 
 # 🎥 Demonstração
 
-## 📱 Aplicativo Mobile
-
-| Tela 1 | Tela 2 | Tela 3 | Tela 4 |
-|:------:|:------:|:------:|:------:|
-| <img src="./assets/image1.png" width="200"> | <img src="assets/image2.png" width="200"> | <img src="assets/image3.png" width="200"> | <img src="assets/image4.png" width="200"> |
-
----
 
 ## 🌐 Aplicação Web
 
@@ -87,7 +80,7 @@ Este projeto foca em entregar uma experiência de navegação fluida, construíd
 |:------:|:------:|
 | <img src="assets/image1.png" width="350"> | <img src="assets/image2.png" width="350"> |
 
-| Projeto | Experiência |
+| Projetos | Experiência |
 |:------:|:------:|
 | <img src="assets/image3.png" width="350"> | <img src="assets/image4.png" width="350"> |
 
