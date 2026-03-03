@@ -5,6 +5,7 @@
     Website de portfólio moderno, responsivo e acessível para apresentar trajetórias, habilidades e projetos.
   </p>
 
+  <a href="https://react.dev/"><img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React"></a>
   <a href="https://nextjs.org/"><img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js"></a>
   <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"></a>
   <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS"></a>
@@ -49,6 +50,7 @@ Este projeto foca em entregar uma experiência de navegação fluida, construíd
 
 ## 🛠 Tecnologias Utilizadas
 
+* **[React](https://react.dev/)** - Biblioteca JavaScript para construção de interfaces de usuário.
 * **[Next.js (App Router)](https://nextjs.org/)** - Framework React com suporte a renderização do lado do servidor (SSR).
 * **[TypeScript](https://www.typescriptlang.org/)** - Adiciona tipagem estática e segurança ao código JavaScript.
 * **[Tailwind CSS](https://tailwindcss.com/)** - Framework CSS utilitário para criação de interfaces responsivas de forma rápida.
@@ -58,7 +60,9 @@ Este projeto foca em entregar uma experiência de navegação fluida, construíd
 ---
 
 ## 👥 Autores
-👤 Nome,:octocat: GitHub,💼 LinkedIn
-Davi Nunes Carvalho,"<a href=""https://www.google.com/search?q=https://github.com/SeuGithubDavi""><img src=""https://www.google.com/search?q=https://img.shields.io/badge/GitHub-100000%3Fstyle%3Dfor-the-badge%26logo%3Dgithub%26logoColor%3Dwhite"" height=""25""></a>","<a href=""https://www.google.com/search?q=https://linkedin.com/in/SeuLinkedinDavi""><img src=""https://www.google.com/search?q=https://img.shields.io/badge/LinkedIn-0077B5%3Fstyle%3Dfor-the-badge%26logo%3Dlinkedin%26logoColor%3Dwhite"" height=""25""></a>"
-Matheus Henrique Tavares Malta Soares,"<a href=""https://www.google.com/search?q=https://github.com/SeuGithubMatheus""><img src=""https://www.google.com/search?q=https://img.shields.io/badge/GitHub-100000%3Fstyle%3Dfor-the-badge%26logo%3Dgithub%26logoColor%3Dwhite"" height=""25""></a>","<a href=""https://www.google.com/search?q=https://linkedin.com/in/SeuLinkedinMatheus""><img src=""https://www.google.com/search?q=https://img.shields.io/badge/LinkedIn-0077B5%3Fstyle%3Dfor-the-badge%26logo%3Dlinkedin%26logoColor%3Dwhite"" height=""25""></a>"
-João Victor Russo Marquito,"<a href=""https://www.google.com/search?q=https://github.com/SeuGithubJoao""><img src=""https://www.google.com/search?q=https://img.shields.io/badge/GitHub-100000%3Fstyle%3Dfor-the-badge%26logo%3Dgithub%26logoColor%3Dwhite"" height=""25""></a>","<a href=""https://www.google.com/search?q=https://linkedin.com/in/SeuLinkedinJoao""><img src=""https://www.google.com/search?q=https://img.shields.io/badge/LinkedIn-0077B5%3Fstyle%3Dfor-the-badge%26logo%3Dlinkedin%26logoColor%3Dwhite"" height=""25""></a>"
+
+| 👤 Nome | 🐙 GitHub |
+|--------|-----------|
+| Davi Nunes Carvalho | [@SeuGithubDavi](https://github.com/SeuGithubDavi) |
+| Matheus Henrique Tavares Malta Soares | [@SeuGithubMatheus](https://github.com/SeuGithubMatheus) |
+| João Victor Russo Marquito | [@SeuGithubJoao](https://github.com/SeuGithubJoao) |
