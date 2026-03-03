@@ -85,61 +85,10 @@ Este projeto foca em entregar uma experiência de navegação fluida, construíd
 
 ## 👥 Autores
 
-<table>
-  <tr>
-    <th>👤 Nome</th>
-    <th>🖼️ Foto</th>
-    <th>🐙 GitHub</th>
-    <th>💼 LinkedIn</th>
-    <th>📧 Email</th>
-  </tr>
+Liste os principais contribuidores. Você pode usar links para seus perfis.
 
-  <tr>
-    <td>Davi Nunes Carvalho</td>
-    <td>
-      <img src="https://github.com/Davii13.png" width="80px" style="border-radius: 10px;" />
-    </td>
-    <td>
-      <a href="https://github.com/Davii13">@Davii13</a>
-    </td>
-    <td>
-      <a href="#">Adicionar LinkedIn</a>
-    </td>
-    <td>
-      <a href="mailto:email@exemplo.com">Adicionar Email</a>
-    </td>
-  </tr>
-
-  <tr>
-    <td>Matheus Henrique Tavares Malta Soares</td>
-    <td>
-      <img src="https://github.com/matheushtms.png" width="80px" style="border-radius: 10px;" />
-    </td>
-    <td>
-      <a href="https://github.com/matheushtms">@matheushtms</a>
-    </td>
-    <td>
-      <a href="#">Adicionar LinkedIn</a>
-    </td>
-    <td>
-      <a href="mailto:email@exemplo.com">Adicionar Email</a>
-    </td>
-  </tr>
-
-  <tr>
-    <td>João Victor Russo Marquito</td>
-    <td>
-      <img src="https://github.com/joaovictorz10.png" width="80px" style="border-radius: 10px;" />
-    </td>
-    <td>
-      <a href="https://github.com/joaovictorz10">@joaovictorz10</a>
-    </td>
-    <td>
-      <a href="#">Adicionar LinkedIn</a>
-    </td>
-    <td>
-      <a href="mailto:email@exemplo.com">Adicionar Email</a>
-    </td>
-  </tr>
-
-</table>
+| 👤 Nome | 🖼️ Foto | :octocat: GitHub | 💼 LinkedIn | 📤 Gmail |
+|---------|----------|-----------------|-------------|-----------|
+| Davi Nunes Carvalho | <div align="center"><img src="https://github.com/Davii13.png" width="70px" height="70px" style="border-radius:50%;"></div> | <div align="center"><a href="https://github.com/Davii13"><img src="https://joaopauloaramuni.github.io/image/github6.png" width="50px" height="50px"></a></div> | <div align="center"><a href="#"><img src="https://joaopauloaramuni.github.io/image/linkedin2.png" width="50px" height="50px"></a></div> | <div align="center"><a href="mailto:seuemail@gmail.com"><img src="https://joaopauloaramuni.github.io/image/gmail3.png" width="50px" height="50px"></a></div> |
+| Matheus Henrique Tavares Malta Soares | <div align="center"><img src="https://github.com/matheushtms.png" width="70px" height="70px" style="border-radius:50%;"></div> | <div align="center"><a href="https://github.com/matheushtms"><img src="https://joaopauloaramuni.github.io/image/github6.png" width="50px" height="50px"></a></div> | <div align="center"><a href="#"><img src="https://joaopauloaramuni.github.io/image/linkedin2.png" width="50px" height="50px"></a></div> | <div align="center"><a href="mailto:seuemail@gmail.com"><img src="https://joaopauloaramuni.github.io/image/gmail3.png" width="50px" height="50px"></a></div> |
+| João Victor Russo Marquito | <div align="center"><img src="https://github.com/joaovictorz10.png" width="70px" height="70px" style="border-radius:50%;"></div> | <div align="center"><a href="https://github.com/joaovictorz10"><img src="https://joaopauloaramuni.github.io/image/github6.png" width="50px" height="50px"></a></div> | <div align="center"><a href="#"><img src="https://joaopauloaramuni.github.io/image/linkedin2.png" width="50px" height="50px"></a></div> | <div align="center"><a href="mailto:seuemail@gmail.com"><img src="https://joaopauloaramuni.github.io/image/gmail3.png" width="50px" height="50px"></a></div> |
