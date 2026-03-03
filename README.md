@@ -83,11 +83,11 @@ Este projeto foca em entregar uma experiência de navegação fluida, construíd
 
 ## 🌐 Aplicação Web
 
-| Tela 1 | Tela 2 |
+| Sobre mim | Habilidades |
 |:------:|:------:|
 | <img src="assets/image1.png" width="350"> | <img src="assets/image2.png" width="350"> |
 
-| Tela 3 | Tela 4 |
+| Projeto | Experiência |
 |:------:|:------:|
 | <img src="assets/image3.png" width="350"> | <img src="assets/image4.png" width="350"> |
 
