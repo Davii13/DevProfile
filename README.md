@@ -85,8 +85,61 @@ Este projeto foca em entregar uma experiência de navegação fluida, construíd
 
 ## 👥 Autores
 
-| 👤 Nome | :octocat: GitHub |
-|--------|-----------|
-| Davi Nunes Carvalho | [@Davii13](https://github.com/Davii13) |
-| Matheus Henrique Tavares Malta Soares | [@matheushtms](https://github.com/matheushtms) |
-| João Victor Russo Marquito | [@joaovictorz10](https://github.com/joaovictorz10) |
+<table>
+  <tr>
+    <th>👤 Nome</th>
+    <th>🖼️ Foto</th>
+    <th>🐙 GitHub</th>
+    <th>💼 LinkedIn</th>
+    <th>📧 Email</th>
+  </tr>
+
+  <tr>
+    <td>Davi Nunes Carvalho</td>
+    <td>
+      <img src="https://github.com/Davii13.png" width="80px" style="border-radius: 10px;" />
+    </td>
+    <td>
+      <a href="https://github.com/Davii13">@Davii13</a>
+    </td>
+    <td>
+      <a href="#">Adicionar LinkedIn</a>
+    </td>
+    <td>
+      <a href="mailto:email@exemplo.com">Adicionar Email</a>
+    </td>
+  </tr>
+
+  <tr>
+    <td>Matheus Henrique Tavares Malta Soares</td>
+    <td>
+      <img src="https://github.com/matheushtms.png" width="80px" style="border-radius: 10px;" />
+    </td>
+    <td>
+      <a href="https://github.com/matheushtms">@matheushtms</a>
+    </td>
+    <td>
+      <a href="#">Adicionar LinkedIn</a>
+    </td>
+    <td>
+      <a href="mailto:email@exemplo.com">Adicionar Email</a>
+    </td>
+  </tr>
+
+  <tr>
+    <td>João Victor Russo Marquito</td>
+    <td>
+      <img src="https://github.com/joaovictorz10.png" width="80px" style="border-radius: 10px;" />
+    </td>
+    <td>
+      <a href="https://github.com/joaovictorz10">@joaovictorz10</a>
+    </td>
+    <td>
+      <a href="#">Adicionar LinkedIn</a>
+    </td>
+    <td>
+      <a href="mailto:email@exemplo.com">Adicionar Email</a>
+    </td>
+  </tr>
+
+</table>
