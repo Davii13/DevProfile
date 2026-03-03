@@ -61,7 +61,7 @@ Este projeto foca em entregar uma experiência de navegação fluida, construíd
 
 ## 👥 Autores
 
-| 👤 Nome | 🐙 GitHub |
+| 👤 Nome | :octocat: GitHub |
 |--------|-----------|
 | Davi Nunes Carvalho | [@Davii13](https://github.com/Davii13) |
 | Matheus Henrique Tavares Malta Soares | [@matheushtms](https://github.com/matheushtms) |
