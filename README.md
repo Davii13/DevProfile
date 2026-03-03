@@ -79,7 +79,7 @@ Para melhor visualização, as telas principais estão organizadas lado a lado.
 
 | Tela 1 | Tela 2 | Tela 3 | Tela 4 |
 |:------:|:------:|:------:|:------:|
-| <img src="SEU_LINK_AQUI_1" alt="Tela 1 Mobile" width="200"> | <img src="SEU_LINK_AQUI_2" alt="Tela 2 Mobile" width="200"> | <img src="SEU_LINK_AQUI_3" alt="Tela 3 Mobile" width="200"> | <img src="SEU_LINK_AQUI_4" alt="Tela 4 Mobile" width="200"> |
+| <img src="(https://cdn.discordapp.com/attachments/1407075190801698819/1478467402374189097/image.png?ex=69a88191&is=69a73011&hm=82f3fb8068404ee13afbd568779132a98bd9f208618813565b889194aa9f57bd&)" alt="Tela 1 Mobile" width="200"> | <img src="SEU_LINK_AQUI_2" alt="Tela 2 Mobile" width="200"> | <img src="SEU_LINK_AQUI_3" alt="Tela 3 Mobile" width="200"> | <img src="SEU_LINK_AQUI_4" alt="Tela 4 Mobile" width="200"> |
 
 ---
 
