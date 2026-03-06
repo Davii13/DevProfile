@@ -1,3 +1,5 @@
+import { Images } from "lucide-react"
+
 export const texts = {
   pt: {
     about: {
@@ -318,122 +320,211 @@ footer: {
     en: "Scroll",
   },
 },
+
+
+//projects
   projects: {
-  titleLine1: {
-    pt: ".Proje",
-    en: ".Proje",
-  },
-  titleLine2: {
-    pt: "tos",
-    en: "cts",
+    titleLine1: {
+      pt: ".Proje",
+      en: ".Proje",
+    },
+    titleLine2: {
+      pt: "tos",
+      en: "cts",
+    },
+    viewProject: {
+      pt: "Ver Projeto",
+      en: "View Project",
+    },
+    viewCode: {
+      pt: "Código",
+      en: "Code",
+    },
+    closeModal: {
+      pt: "Fechar",
+      en: "Close",
+    },
+    technologiesLabel: {
+      pt: "Tecnologias",
+      en: "Technologies",
+    },
+    list: {
+      pt: [
+        {
+          id: "PJ-001",
+          title: "Dev Flow",
+          subtitle: "Plataforma de Gerenciamento de Projetos",
+          description:
+            "Uma aplicação full stack para gerenciamento de projetos de desenvolvimento. Inclui kanban board, tracking de sprint, integração com github e dashboard analítico em tempo real.",
+          detailedDescription:
+            "Dev Flow é uma plataforma completa de gerenciamento de projetos construída para equipes de desenvolvimento ágeis. Oferece um kanban board interativo com drag-and-drop, sistema de tracking de sprints com burndown charts, integração nativa com GitHub para sincronizar pull requests e issues, e um dashboard analítico em tempo real com métricas de velocidade da equipe e progresso das entregas.",
+          image: "/images/giphy.gif",
+          tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
+          technologies: [
+            { name: "Next.js", description: "Framework React para SSR e SSG" },
+            { name: "TypeScript", description: "Tipagem estática" },
+            { name: "Prisma", description: "ORM para banco de dados" },
+            { name: "PostgreSQL", description: "Banco de dados relacional" },
+            { name: "Tailwind CSS", description: "Estilização utilitária" },
+            { name: "Framer Motion", description: "Animações fluidas" },
+          ],
+          year: "2025",
+          link: "#",
+          github: "#",
+        },
+        {
+          id: "PJ-002",
+          title: "Art Vault",
+          subtitle: "Galeria Digital de Arte",
+          description:
+            "Plataforma para artistas exibirem e venderem suas obras digitais com suporte a NFTs e pagamentos tradicionais.",
+          detailedDescription:
+            "Art Vault é um marketplace de arte digital que conecta artistas independentes a colecionadores do mundo todo. Possui galeria imersiva com visualização fullscreen, sistema de leilão em tempo real, suporte a múltiplas moedas incluindo criptomoedas, e um painel de analytics para artistas acompanharem o desempenho de suas obras.",
+          image: "/images/giphy.gif",
+          tags: ["React", "Node.js", "MongoDB", "Web3"],
+          technologies: [
+            { name: "React", description: "Biblioteca de UI" },
+            { name: "Node.js", description: "Runtime JavaScript no servidor" },
+            { name: "MongoDB", description: "Banco de dados NoSQL" },
+            { name: "Web3.js", description: "Integração com blockchain" },
+            { name: "Stripe", description: "Processamento de pagamentos" },
+          ],
+          year: "2025",
+          link: "#",
+          github: "#",
+        },
+        {
+          id: "PJ-003",
+          title: "Pulse AI",
+          subtitle: "Assistente de Saúde Inteligente",
+          description:
+            "Aplicativo móvel que monitora sinais vitais via wearables e fornece insights personalizados com IA.",
+          detailedDescription:
+            "Pulse AI integra dados de wearables como Apple Watch e Garmin para oferecer uma visão holística da saúde do usuário. O sistema de IA analisa padrões de sono, frequência cardíaca e atividade física para gerar recomendações personalizadas, alertas de anomalias e relatórios semanais compartilháveis com médicos.",
+          image: "/images/giphy.gif",
+          tags: ["React Native", "Python", "TensorFlow", "FastAPI"],
+          technologies: [
+            { name: "React Native", description: "App mobile cross-platform" },
+            { name: "Python", description: "Backend e modelos de IA" },
+            { name: "TensorFlow", description: "Machine learning" },
+            { name: "FastAPI", description: "API REST de alta performance" },
+            { name: "HealthKit", description: "Integração com wearables" },
+          ],
+          year: "2025",
+          link: "#",
+          github: "#",
+        },
+        {
+          id: "PJ-004",
+          title: "Link Space",
+          subtitle: "Hub de Redes Sociais",
+          description:
+            "Agregador de perfis e redes sociais com analytics detalhados e personalização avançada de página.",
+          detailedDescription:
+            "Link Space é um hub centralizado que permite criar uma página única com todos os links e redes sociais do usuário. Conta com editor drag-and-drop para personalização completa, integração com APIs das principais redes sociais para exibir métricas em tempo real, temas visuais customizáveis e suporte a domínio próprio.",
+          image: "/images/giphy.gif",
+          tags: ["Next.js", "Supabase", "Tailwind CSS", "Vercel"],
+          technologies: [
+            { name: "Next.js", description: "Framework full stack" },
+            { name: "Supabase", description: "Backend as a Service" },
+            { name: "Tailwind CSS", description: "Design system utilitário" },
+            { name: "Vercel", description: "Deploy e edge functions" },
+          ],
+          year: "2024",
+          link: "#",
+          github: "#",
+        },
+      ],
+      en: [
+        {
+          id: "PJ-001",
+          title: "Dev Flow",
+          subtitle: "Project Management Platform",
+          description:
+            "A full stack application for managing development projects. Includes kanban board, sprint tracking, GitHub integration and real-time analytics dashboard.",
+          detailedDescription:
+            "Dev Flow is a complete project management platform built for agile development teams. It offers an interactive drag-and-drop kanban board, sprint tracking system with burndown charts, native GitHub integration to sync pull requests and issues, and a real-time analytics dashboard with team velocity metrics and delivery progress.",
+          image: "/images/giphy.gif",
+          tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
+          technologies: [
+            { name: "Next.js", description: "React framework for SSR and SSG" },
+            { name: "TypeScript", description: "Static typing" },
+            { name: "Prisma", description: "Database ORM" },
+            { name: "PostgreSQL", description: "Relational database" },
+            { name: "Tailwind CSS", description: "Utility-first styling" },
+            { name: "Framer Motion", description: "Smooth animations" },
+          ],
+          year: "2025",
+          link: "#",
+          github: "#",
+        },
+        {
+          id: "PJ-002",
+          title: "Art Vault",
+          subtitle: "Digital Art Gallery",
+          description:
+            "Platform for artists to showcase and sell their digital artworks with NFT support and traditional payments.",
+          detailedDescription:
+            "Art Vault is a digital art marketplace connecting independent artists with collectors worldwide. Features an immersive gallery with fullscreen viewing, real-time auction system, support for multiple currencies including crypto, and an analytics panel for artists to track their artwork performance.",
+          image: "/images/giphy.gif",
+          tags: ["React", "Node.js", "MongoDB", "Web3"],
+          technologies: [
+            { name: "React", description: "UI library" },
+            { name: "Node.js", description: "Server-side JavaScript runtime" },
+            { name: "MongoDB", description: "NoSQL database" },
+            { name: "Web3.js", description: "Blockchain integration" },
+            { name: "Stripe", description: "Payment processing" },
+          ],
+          year: "2025",
+          link: "#",
+          github: "#",
+        },
+        {
+          id: "PJ-003",
+          title: "Pulse AI",
+          subtitle: "Intelligent Health Assistant",
+          description:
+            "Mobile app that monitors vital signs via wearables and provides personalized AI-powered insights.",
+          detailedDescription:
+            "Pulse AI integrates data from wearables like Apple Watch and Garmin to offer a holistic view of user health. The AI system analyzes sleep patterns, heart rate and physical activity to generate personalized recommendations, anomaly alerts and weekly reports shareable with doctors.",
+          image: "/images/giphy.gif",
+          tags: ["React Native", "Python", "TensorFlow", "FastAPI"],
+          technologies: [
+            { name: "React Native", description: "Cross-platform mobile app" },
+            { name: "Python", description: "Backend and AI models" },
+            { name: "TensorFlow", description: "Machine learning" },
+            { name: "FastAPI", description: "High-performance REST API" },
+            { name: "HealthKit", description: "Wearables integration" },
+          ],
+          year: "2025",
+          link: "#",
+          github: "#",
+        },
+        {
+          id: "PJ-004",
+          title: "Link Space",
+          subtitle: "Social Media Hub",
+          description:
+            "Social profile aggregator with detailed analytics and advanced page customization.",
+          detailedDescription:
+            "Link Space is a centralized hub for creating a single page with all your links and social networks. Features a drag-and-drop editor for full customization, integration with major social network APIs to display real-time metrics, customizable visual themes and custom domain support.",
+          image: "/images/giphy.gif",
+          tags: ["Next.js", "Supabase", "Tailwind CSS", "Vercel"],
+          technologies: [
+            { name: "Next.js", description: "Full stack framework" },
+            { name: "Supabase", description: "Backend as a Service" },
+            { name: "Tailwind CSS", description: "Utility design system" },
+            { name: "Vercel", description: "Deploy and edge functions" },
+          ],
+          year: "2024",
+          link: "#",
+          github: "#",
+        },
+      ],
+    },
   },
 
-  viewProject: {
-    pt: "Ver Projeto",
-    en: "View Project",
-  },
 
-  viewCode: {
-    pt: "Código",
-    en: "Code",
-  },
-
-  list: {
-    pt: [
-      {
-        id: "PJ-001",
-        title: "DevFlow",
-        subtitle: "Plataforma de Gerenciamento de Projetos",
-        description:
-          "Uma aplicação full stack para gerenciamento de projetos de desenvolvimento. Inclui kanban board, tracking de sprints, integração com GitHub e dashboard analítico em tempo real.",
-        tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
-        year: "2025",
-        link: "#",
-        github: "#",
-      },
-      {
-        id: "PJ-002",
-        title: "CryptoTracker",
-        subtitle: "Dashboard de Criptomoedas",
-        description:
-          "Dashboard interativo para acompanhamento de criptomoedas com gráficos em tempo real, alertas de preço customizáveis e portfolio tracker.",
-        tags: ["React", "Node.js", "WebSocket", "Chart.js"],
-        year: "2025",
-        link: "#",
-        github: "#",
-      },
-      {
-        id: "PJ-003",
-        title: "EcoMarket",
-        subtitle: "E-commerce Sustentável",
-        description:
-          "Marketplace focado em produtos sustentáveis com sistema de pagamento integrado, reviews e painel administrativo completo.",
-        tags: ["Next.js", "Stripe", "MongoDB", "Tailwind"],
-        year: "2024",
-        link: "#",
-        github: "#",
-      },
-      {
-        id: "PJ-004",
-        title: "CodeSnap",
-        subtitle: "Editor de Code Snippets",
-        description:
-          "Ferramenta online para criar e compartilhar screenshots bonitas de código. Suporta múltiplas linguagens e exportação em alta resolução.",
-        tags: ["React", "TypeScript", "Canvas API", "Firebase"],
-        year: "2024",
-        link: "#",
-        github: "#",
-      },
-    ],
-
-    en: [
-      {
-        id: "PJ-001",
-        title: "DevFlow",
-        subtitle: "Project Management Platform",
-        description:
-          "A full stack application for managing development projects. Includes a kanban board, sprint tracking, GitHub integration, and a real-time analytics dashboard.",
-        tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
-        year: "2025",
-        link: "#",
-        github: "#",
-      },
-      {
-        id: "PJ-002",
-        title: "CryptoTracker",
-        subtitle: "Cryptocurrency Dashboard",
-        description:
-          "Interactive dashboard for tracking cryptocurrencies with real-time charts, customizable price alerts, and portfolio tracking.",
-        tags: ["React", "Node.js", "WebSocket", "Chart.js"],
-        year: "2025",
-        link: "#",
-        github: "#",
-      },
-      {
-        id: "PJ-003",
-        title: "EcoMarket",
-        subtitle: "Sustainable E-commerce",
-        description:
-          "Marketplace focused on sustainable products with integrated payment system, reviews, and full admin panel.",
-        tags: ["Next.js", "Stripe", "MongoDB", "Tailwind"],
-        year: "2024",
-        link: "#",
-        github: "#",
-      },
-      {
-        id: "PJ-004",
-        title: "CodeSnap",
-        subtitle: "Code Snippet Editor",
-        description:
-          "Online tool to create and share beautiful code screenshots. Supports multiple languages and high-resolution export.",
-        tags: ["React", "TypeScript", "Canvas API", "Firebase"],
-        year: "2024",
-        link: "#",
-        github: "#",
-      },
-    ],
-  },
-},
 skills: {
   titleLine1: {
     pt: ".Habili",

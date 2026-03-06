@@ -1,75 +1,3 @@
-/*
-======================================================
-PROJECTS SECTION - DOCUMENTAÇÃO DO COMPONENTE
-======================================================
-
-Descrição:
-Componente de seção de projetos do portfólio, com cards
-interativos e animados usando Framer Motion, incluindo
-efeitos de hover, glitch no título, parallax e microinterações.
-
-------------------------------------------------------
-FUNCIONALIDADES PRINCIPAIS
-------------------------------------------------------
-
-1) Grid de Projetos
-- Exibe lista de projetos em grid responsivo (1 coluna mobile, 2 colunas desktop)
-- Cada card exibe:
-  * ID e ano
-  * Título com efeito de glitch
-  * Subtítulo
-  * Descrição resumida
-  * Tags de tecnologias
-  * Links: "Ver Projeto" e "Código GitHub"
-
-2) Animações e Microinterações
-- Framer Motion:
-  * Entrada suave dos cards (fade + slide)
-  * Efeito parallax baseado no movimento do mouse (rotateX/rotateY)
-  * Linha de destaque inferior animada no hover
-  * Tags animadas com leve salto e mudança de cor
-  * Corner stamp com número do projeto aparece no hover
-  * Glitch temporário no título ao passar o mouse
-  * Slide fill na barra do header do card ao hover
-
-3) Hover Effects
-- Cards:
-  * Título com glitch e sombra dupla
-  * Tags mudam cor e giram levemente
-  * Linha inferior e corner stamp animam
-- Links:
-  * Movem-se levemente ao hover
-  * Mudança de cor
-  * Cursor com texto contextual ("Ver mais", "GitHub")
-
-4) Layout e Estrutura
-- Section com id="projetos" e padding top/bottom
-- Header estilizado com efeito tipográfico e underline animado
-- Grid responsivo adaptável a diferentes resoluções
-- Cards com borda e background diferenciados
-- Uso de refs e useInView para animações apenas quando visíveis
-
-------------------------------------------------------
-TECNOLOGIAS UTILIZADAS
-------------------------------------------------------
-
-- React
-- Next.js (Client Component)
-- Framer Motion
-- Tailwind CSS
-- Lucide React (ícones)
-
-------------------------------------------------------
-OBJETIVO DO DESIGN
-------------------------------------------------------
-
-- Destacar projetos de forma visual e interativa
-- Engajar usuário com microinterações e efeitos retro/glitch
-- Layout limpo e responsivo
-- Experiência imersiva com parallax e animações suaves
-
-======================================================
-*/
 "use client"
 
 import { motion, useInView, useMotionValue, useTransform } from "framer-motion"
@@ -77,6 +5,7 @@ import { useRef, useState } from "react"
 import { ExternalLink, Github } from "lucide-react"
 import { texts } from "@/i18n/texts"
 import { useLanguage } from "@/context/LanguageContext"
+import ProjectModal from "@/components/newspaper/ProjectModal"
 
 function ProjectCard({
   project,
@@ -84,12 +13,14 @@ function ProjectCard({
   isInView,
   viewProjectLabel,
   viewCodeLabel,
+  onSelect,
 }: {
   project: any
   i: number
   isInView: boolean
   viewProjectLabel: string
   viewCodeLabel: string
+  onSelect: (project: any) => void
 }) {
   const ref = useRef<HTMLDivElement>(null)
   const mx = useMotionValue(0)
@@ -149,8 +80,9 @@ function ProjectCard({
         my.set(0)
         setIsHovered(false)
       }}
+      onClick={() => onSelect(project)}
       style={{ rotateX, rotateY, transformPerspective: 900 }}
-      className="group relative border border-card-foreground/10 bg-card overflow-hidden"
+      className="group relative border border-card-foreground/10 bg-card overflow-hidden cursor-pointer"
     >
       {/* Header */}
       <div className="flex items-center justify-between bg-card-foreground px-6 py-3 relative overflow-hidden">
@@ -206,6 +138,7 @@ function ProjectCard({
         <div className="flex gap-4">
           <a
             href={project.link}
+            onClick={(e) => e.stopPropagation()}
             className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-card-foreground hover:text-primary transition-colors"
           >
             <ExternalLink size={14} />
@@ -214,6 +147,7 @@ function ProjectCard({
 
           <a
             href={project.github}
+            onClick={(e) => e.stopPropagation()}
             className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-card-foreground hover:text-primary transition-colors"
           >
             <Github size={14} />
@@ -226,12 +160,14 @@ function ProjectCard({
 }
 
 export function ProjectsSection() {
-  const { lang } = useLanguage() // ✅ usando o nome correto
+  const { lang } = useLanguage()
   const section = texts.projects
   const projects = section.list[lang]
 
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
+
+  const [selectedProject, setSelectedProject] = useState<any | null>(null)
 
   return (
     <section id="projetos" className="relative bg-card py-24 md:py-32" ref={ref}>
@@ -264,10 +200,17 @@ export function ProjectsSection() {
               isInView={isInView}
               viewProjectLabel={section.viewProject[lang]}
               viewCodeLabel={section.viewCode[lang]}
+              onSelect={setSelectedProject}
             />
           ))}
         </div>
       </div>
+
+      {/* Modal */}
+      <ProjectModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </section>
   )
 }

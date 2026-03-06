@@ -8,7 +8,6 @@ import { ContactSection } from "@/components/newspaper/contact-section"
 import { DownloadSection } from "@/components/newspaper/download-section"
 import { Footer } from "@/components/newspaper/footer"
 import { CustomCursor } from "@/components/newspaper/custom-cursor"
-
 export default function Home() {
   return (
     <main>
