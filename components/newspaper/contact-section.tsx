@@ -1,10 +1,11 @@
 "use client"
 
 import { motion, useInView } from "framer-motion"
-import { useRef, useState } from "react"
-import { Mail, MapPin, Phone, Github, Linkedin, Send } from "lucide-react"
+import { useRef, useState, FormEvent } from "react"
+import { Mail, MapPin, Phone, Github, Linkedin, Send, Loader2 } from "lucide-react"
 import { useLanguage } from "@/context/LanguageContext"
 import { texts } from "@/i18n/texts"
+import emailjs from '@emailjs/browser'
 
 export function ContactSection() {
   const { lang } = useLanguage()
@@ -12,7 +13,42 @@ export function ContactSection() {
 
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const [focusedField, setFocusedField] = useState<string | null>(null)
+  
+  // Estados do formulário e carregamento
+  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    try {
+      // Disparo do email com as suas chaves reais atualizadas!
+      await emailjs.send(
+        'service_p9kcjgo',     // Seu Service ID
+        'template_xyilnpi',    // <--- Seu NOVO Template ID aqui
+        {
+          from_name: formData.name,
+          reply_to: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        '___TqJ2bCPC2gsevV'    // Sua Public Key
+      )
+      
+      alert(lang === 'pt' ? 'Mensagem enviada com sucesso!' : 'Message sent successfully!')
+      setFormData({ name: "", email: "", subject: "", message: "" }) // Limpa os campos
+    } catch (error) {
+      console.error(error)
+      alert(lang === 'pt' ? 'Erro ao enviar a mensagem. Tente novamente.' : 'Error sending message. Try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   const contactInfo = [
     {
@@ -150,34 +186,37 @@ export function ContactSection() {
                 {t.formTitle[lang]}
               </h3>
 
-              <form className="flex flex-col gap-6">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                 {/* Name + Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {[
-                    {
-                      id: "name",
-                      label: t.fields.name[lang],
-                      placeholder: t.placeholders.name[lang],
-                      type: "text",
-                    },
-                    {
-                      id: "email",
-                      label: t.fields.email[lang],
-                      placeholder: t.placeholders.email[lang],
-                      type: "email",
-                    },
-                  ].map((field) => (
-                    <div key={field.id}>
-                      <label className="font-mono text-[10px] uppercase tracking-widest text-card-foreground/50 block mb-2">
-                        {field.label}
-                      </label>
-                      <input
-                        type={field.type}
-                        placeholder={field.placeholder}
-                        className="w-full bg-transparent border-b-2 border-card-foreground/20 py-3 font-sans text-sm text-card-foreground focus:border-primary outline-none transition-colors placeholder:text-card-foreground/30"
-                      />
-                    </div>
-                  ))}
+                  <div>
+                    <label className="font-mono text-[10px] uppercase tracking-widest text-card-foreground/50 block mb-2">
+                      {t.fields.name[lang]}
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      placeholder={t.placeholders.name[lang]}
+                      className="w-full bg-transparent border-b-2 border-card-foreground/20 py-3 font-sans text-sm text-card-foreground focus:border-primary outline-none transition-colors placeholder:text-card-foreground/30"
+                    />
+                  </div>
+                  <div>
+                    <label className="font-mono text-[10px] uppercase tracking-widest text-card-foreground/50 block mb-2">
+                      {t.fields.email[lang]}
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      placeholder={t.placeholders.email[lang]}
+                      className="w-full bg-transparent border-b-2 border-card-foreground/20 py-3 font-sans text-sm text-card-foreground focus:border-primary outline-none transition-colors placeholder:text-card-foreground/30"
+                    />
+                  </div>
                 </div>
 
                 {/* Subject */}
@@ -187,6 +226,10 @@ export function ContactSection() {
                   </label>
                   <input
                     type="text"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
                     placeholder={t.placeholders.subject[lang]}
                     className="w-full bg-transparent border-b-2 border-card-foreground/20 py-3 font-sans text-sm text-card-foreground focus:border-primary outline-none transition-colors placeholder:text-card-foreground/30"
                   />
@@ -199,6 +242,10 @@ export function ContactSection() {
                   </label>
                   <textarea
                     rows={5}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
                     placeholder={t.placeholders.message[lang]}
                     className="w-full bg-transparent border-b-2 border-card-foreground/20 py-3 font-sans text-sm text-card-foreground focus:border-primary outline-none transition-colors resize-none placeholder:text-card-foreground/30"
                   />
@@ -206,12 +253,13 @@ export function ContactSection() {
 
                 <motion.button
                   type="submit"
+                  disabled={isSubmitting}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  className="flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-mono text-xs uppercase tracking-widest self-start"
+                  className="flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-mono text-xs uppercase tracking-widest self-start disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  <Send size={14} />
-                  {t.button[lang]}
+                  {isSubmitting ? <Loader2 size={14} className="animate-spin" /> : <Send size={14} />}
+                  {isSubmitting ? (lang === 'pt' ? 'Enviando...' : 'Sending...') : t.button[lang]}
                 </motion.button>
               </form>
             </div>
