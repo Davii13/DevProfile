@@ -50,23 +50,20 @@ Este projeto foca em entregar uma experiência de navegação fluida, construíd
 ## ✨ Funcionalidades Principais
 Liste as funcionalidades de forma clara e objetiva.
 
-- 🔐 **Autenticação Segura:** Login, Cadastro e Recuperação de Senha.
-- 📈 **Painel de Controle:** Visualização de dados em tempo real com gráficos.
-- ⚙️ **Gerenciamento de CRUD:** Criação, Leitura, Atualização e Deleção de recursos (e.g., Usuários, Itens, Posts).
-- 📊 **Relatórios Exportáveis:** Exportação de dados em PDF, CSV ou Excel.
-- 🌐 **Internacionalização (i18n):** Suporte a múltiplos idiomas.
-- 🧵 **Logs e Monitoramento:** Registro detalhado de atividades e análise de desempenho.
-- 🔄 **Integração com APIs Externas:** Conexão com serviços de terceiros (pagamentos, mapas, autenticação, etc.).
-- 📨 **Sistema de Notificações:** Envio de alertas por e-mail, push ou notificações internas.
-
+- 👨‍💻 **Apresentação Profissional:** Exibição de informações sobre o desenvolvedor, trajetória e área de atuação.
+- 📂 **Exibição de Projetos:** Mostra projetos desenvolvidos com descrição e tecnologias utilizadas.
+- 🛠 **Skills e Ferramentas:** Apresentação das principais habilidades técnicas, linguagens, frameworks e ferramentas utilizadas.
+- 📧 **Formulário de Contato:** Permite que visitantes enviem mensagens diretamente pelo site através de e-mail.
+- 📄 **Download de Currículo:** Opção para baixar o currículo profissional em PDF.
+- 🎨 **Interface Moderna:** Layout responsivo e interativo com animações para melhor experiência do usuário.
 ---
 ### 💻 Front-end
 
-* **Framework/Biblioteca:** [Ex: React v18, Vue.js v3, Angular v17]
-* **Linguagem/Superset:** [Ex: TypeScript, JavaScript ES6+]
-* **Estilização:** [Ex: Tailwind CSS, Sass, Styled Components, Material UI]
-* **Gerenciamento de Estado:** [Ex: Redux Toolkit, Zustand, Context API]
-* **Build Tool:** [Ex: Vite, Webpack]
+* **Framework/Biblioteca:** React
+* **Linguagem/Superset:** TypeScript / JavaScript (ES6+)
+* **Estilização:** Tailwind CSS
+* **Gerenciamento de Estado:** React Context API
+* **Build Tool:** Next.js
 ---
 ## 🔧 Instalação e Execução
 
