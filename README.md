@@ -76,11 +76,11 @@ Certifique-se de que o usuário tenha o ambiente configurado.
 Acesse a pasta do Front-end e instale as dependências do Node.js:
 
 ```bash
-cd frontend
-npm install
-# ou
-yarn install
-cd .. # Retorna para a raiz
+cd DEvProfile
+pnpm install
+pnpm install @emailjs/browser
+pnpm dev
+
 ```
 ---
 
