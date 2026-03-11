@@ -47,6 +47,42 @@ O **DevProfile** nasceu da necessidade de centralizar a identidade profissional 
 Este projeto foca em entregar uma experiência de navegação fluida, construída com as ferramentas mais modernas do ecossistema front-end.
 
 ---
+## ✨ Funcionalidades Principais
+Liste as funcionalidades de forma clara e objetiva.
+
+- 🔐 **Autenticação Segura:** Login, Cadastro e Recuperação de Senha.
+- 📈 **Painel de Controle:** Visualização de dados em tempo real com gráficos.
+- ⚙️ **Gerenciamento de CRUD:** Criação, Leitura, Atualização e Deleção de recursos (e.g., Usuários, Itens, Posts).
+- 📊 **Relatórios Exportáveis:** Exportação de dados em PDF, CSV ou Excel.
+- 🌐 **Internacionalização (i18n):** Suporte a múltiplos idiomas.
+- 🧵 **Logs e Monitoramento:** Registro detalhado de atividades e análise de desempenho.
+- 🔄 **Integração com APIs Externas:** Conexão com serviços de terceiros (pagamentos, mapas, autenticação, etc.).
+- 📨 **Sistema de Notificações:** Envio de alertas por e-mail, push ou notificações internas.
+
+---
+### 💻 Front-end
+
+* **Framework/Biblioteca:** [Ex: React v18, Vue.js v3, Angular v17]
+* **Linguagem/Superset:** [Ex: TypeScript, JavaScript ES6+]
+* **Estilização:** [Ex: Tailwind CSS, Sass, Styled Components, Material UI]
+* **Gerenciamento de Estado:** [Ex: Redux Toolkit, Zustand, Context API]
+* **Build Tool:** [Ex: Vite, Webpack]
+---
+## 🔧 Instalação e Execução
+
+### Pré-requisitos
+Certifique-se de que o usuário tenha o ambiente configurado.
+
+Acesse a pasta do Front-end e instale as dependências do Node.js:
+
+```bash
+cd frontend
+npm install
+# ou
+yarn install
+cd .. # Retorna para a raiz
+```
+---
 
 ### 📂 Estrutura de Pastas Principais
 
