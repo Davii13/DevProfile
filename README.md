@@ -36,7 +36,7 @@
 ## 🔗 Links Principais
 
 * 🎨 **Protótipo no Figma:** [Acessar Design do Portfólio](https://www.figma.com/site/5uJwViQDZvkjFkw1QgB3hw/portifolio?node-id=0-1&t=inUnvzpmFWvPnJtW-1)
-* 🌐 **Site Publicado (Produção):** [Matheus henrique](https://devprofile-blond.vercel.app/), [Davi Nunes Carvalho]([https://devprofile-blond.vercel.app/](https://portifolio-liart-alpha.vercel.app/))
+* 🌐 **Site Publicado (Produção):** [Matheus henrique](https://devprofile-blond.vercel.app/), [Davi Nunes Carvalho](https://portifolio-liart-alpha.vercel.app/)
 
 ---
 
